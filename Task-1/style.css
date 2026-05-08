@@ -36,7 +36,7 @@ body {
 .pika {
   position: absolute;
   width: 600px;
-  height: 80%;
+  height: 86%;
   right:14%;
   top: 10%;
 }
@@ -64,6 +64,10 @@ body {
   font-size: 120px;
   font-weight: 900;
 }
+h1:hover{
+    color: #677d6b;
+    cursor: pointer;
+}
 .left p {
     width: 50%;
     font-size: 17px;
@@ -84,9 +88,17 @@ body {
     left: 50px;
 }
 
+
+
+
 .fa-solid {
     position: absolute;
     font-size: 30px;
     top: 20px;
     right: 30px;
+}
+
+.fa-solid:hover{
+    color: #677d6b;
+    cursor: pointer;
 }
