@@ -44,7 +44,7 @@ body {
     position: absolute;
     width: 150px;
     /* height: 100px; */
-    top: 40px;
+    top: 20px;
     left: 90px;
 }
 .right {
@@ -78,8 +78,15 @@ body {
 .poki{
  
       position: absolute;
-    width: 200px;
+    width: 190px;
     /* height: 100px; */
     bottom: -80px;
     left: 50px;
+}
+
+.fa-solid {
+    position: absolute;
+    font-size: 30px;
+    top: 20px;
+    right: 30px;
 }
