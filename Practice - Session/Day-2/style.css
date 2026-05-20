@@ -23,7 +23,7 @@ main {
     "left-center center-bottom right-center"
     "left-bottom center-bottom right-center";
   gap: 20px;
-  padding: 10px 25px;
+  padding: 3rem 6rem;
 }
 
 .left-top {
