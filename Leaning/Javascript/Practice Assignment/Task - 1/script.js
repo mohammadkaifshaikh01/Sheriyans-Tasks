@@ -20,7 +20,6 @@
 
 // console.table(["K" , "A" , "I" , "F"])
 
-
 // ---------------------------------
 
 // ## Variables
@@ -43,7 +42,6 @@
 //  b = temp
 
 //  console.log("a" , a , "b" ,b)
-
 
 // 4. Create a constant variable for `PI` and print it.
 
@@ -72,3 +70,20 @@
 // let fullName = "Mohammad Kaif Shaikh"
 
 // console.log(firstName,lastName,fullName)
+
+//Name Verifcation begginer code
+
+
+
+//Basic Age Confirmation Code
+let uName = prompt("Please Tell Me Your Name");
+let verify;
+
+if (uName) {
+  verify = confirm("Are You Sure This Is Your Name");
+}
+
+// console.log(verify);
+if (verify) {
+  console.log("You Will Be A Developer", uName);
+}
