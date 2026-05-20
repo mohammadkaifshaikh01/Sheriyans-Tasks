@@ -74,16 +74,48 @@
 //Name Verifcation begginer code
 
 
+// ## Data Types
+
+// 1. Create variables of type string, number, boolean, null, and undefined.
+// 2. Check the type of different variables using `typeof`.
+// 3. Store your mobile number in a variable and check its type.
+// 4. Create a variable with value `null` and check its type.
+// 5. Create a bigint number and print it.
+
+// var str = "Kaif"
+// var num = 6268352345
+// var check = true
+// var empty =  null;
+// var nothing ;
+// var bigint = 223372036854775807n
+
+// console.log(typeof(str))
+// console.log(typeof(num))
+// console.log(typeof(check))
+// console.log(typeof(empty))
+// console.log(typeof(nothing))
+// console.log(typeof(bigint))
+
+
+
+
+
+
+
+
+
+
+
+
 
 //Basic Age Confirmation Code
-let uName = prompt("Please Tell Me Your Name");
-let verify;
+// let uName = prompt("Please Tell Me Your Name");
+// let verify;
 
-if (uName) {
-  verify = confirm("Are You Sure This Is Your Name");
-}
+// if (uName) {
+//   verify = confirm("Are You Sure This Is Your Name");
+// }
 
-// console.log(verify);
-if (verify) {
-  console.log("You Will Be A Developer", uName);
-}
+// if (verify) {
+//   console.log("You Will Be A Developer", uName);
+// }
