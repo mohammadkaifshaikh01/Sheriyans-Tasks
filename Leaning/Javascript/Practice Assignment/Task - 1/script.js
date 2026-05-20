@@ -98,6 +98,63 @@
 
 
 
+// ## Type Conversion & Coercion
+
+// 1. Convert the string `"50"` into a number.
+// let str = "50"
+// console.log(typeof(str))
+// let num = Number(str)
+// console.log(typeof(num))
+
+// 2. Convert the number `100` into a string.
+// let num = 1000
+// console.log(typeof(num))
+// let str = String(num)
+// console.log(typeof(str))
+
+// 3. Convert `"true"` into a boolean.
+// let str = "true"
+// console.log(typeof(str))
+// let bool = Boolean(str)
+// console.log(typeof(bool))
+
+// 4. Check the output of:
+// - `"5" + 2`
+// console.log("5" + 2)
+
+// - `"5" - 2`
+// console.log("5" - 2)
+
+// - `true + 1`
+// console.log(true + 1)
+
+// 1. Create a variable with value `"123abc"` and convert it into a number.
+// var value = "123abc"
+// console.log(typeof(value))
+// let num = Number(value)
+// console.log(typeof(num))
+// console.log(num)
+
+
+// 2. Use `parseInt()` on `"500px"`.
+// let val = "500600kaif"
+// let change = parseInt(val)
+// console.log(typeof(change))
+// console.log(change)
+
+
+// ## Operators
+
+// 1. Add two numbers and print the result.
+// 2. Find the remainder when 25 is divided by 4.
+// 3. Find the square of a number using exponent operator.
+// 4. Increment a variable using `++`.
+// 5. Decrement a variable using `-`.
+// 6. Use `+=` operator to increase a variable by 20.
+// 7. Compare two numbers using `>`, `<`, `>=`, `<=`.
+// 8. Check if two values are strictly equal using `===`.
+// 9. Compare `"10"` and `10` using both `==` and `===`.
+// 10. Create two boolean variables and test `&&`, `||`, and `!`.
 
 
 
