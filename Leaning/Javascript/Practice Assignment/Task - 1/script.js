@@ -146,20 +146,126 @@
 // ## Operators
 
 // 1. Add two numbers and print the result.
+// let num1 = 10
+// let num2 = 20
+// console.log(num1+num2)
+
 // 2. Find the remainder when 25 is divided by 4.
+// let num = 25
+// let solve = num % 4
+// console.log(solve)
+
 // 3. Find the square of a number using exponent operator.
+// let square = 10
+// let ans = square ** 2
+// console.log(ans)
+
 // 4. Increment a variable using `++`.
+// let a = 1
+// console.log(a++)
+
 // 5. Decrement a variable using `-`.
+// let a = 2
+// a--
+// console.log(a)
+// console.log(a--)
+// console.log(a)
+
 // 6. Use `+=` operator to increase a variable by 20.
+// let a = 20
+// a+=20
+// console.log(a)
+
 // 7. Compare two numbers using `>`, `<`, `>=`, `<=`.
+// let num1 = 20
+// let num2 = 20
+// console.log(num1 > num2)
+// console.log(num1 < num2)
+// console.log(num1 <= num2)
+// console.log(num1 >= num2)
+
 // 8. Check if two values are strictly equal using `===`.
 // 9. Compare `"10"` and `10` using both `==` and `===`.
+// let a = 10
+// let b = "10"
+// console.log(a == b)
+// console.log(a === b)
+
 // 10. Create two boolean variables and test `&&`, `||`, and `!`.
+// let a = true
+// let b = false
+// console.log(a && b)
+// console.log(a || b)
+// console.log(!a)
 
 
+// ## Strings
+// let name = "Kaif Alfiya Shaikh JavaScript"
+
+// 1. Create a string and print its length.
+// let b = name.length
+// console.log(b)
+
+// 2. Convert a string into uppercase.
+// console.log(name.toUpperCase())
+
+// 3. Convert a string into lowercase.
+// console.log(name.toLowerCase())
+
+// 4. Check if a string includes the word `"JavaScript"`.
+// console.log(name.includes("JavaScript"))
+
+// 5. Extract the word `"JavaScript"` from `"Kaif Alfiya Shaikh JavaScript"`.
+// console.log(name.slice(19 , 29))
+
+// 6. Replace `"apple"` with `"mango"` in a sentence.
+// console.log(name.replace("JavaScript" , "Python"))
+
+// 7. Split `"HTML,CSS,JS"` into an array.
+// let language = "HTML,CSS,JS"
+// let ans = language.split(",")
+// console.log(ans)
+
+// 8. Remove extra spaces from a string.
+// let name = "Kaif "
+// console.log(name.trim(" "))
+
+// 9. Repeat the word `"Hi"` 5 times.
+// console.log(name.repeat(5))
 
 
+// 10. Print the first character of a string.
+// console.log(name.charAt(0))
 
+// 11. Use template literals to print:`"My name is Aman and I am 20 years old"`
+// let age = 20
+// console.log(`My name is ${name} and I am ${age} years old`)
+
+
+// ## Numbers & Math
+
+// 1. Round `4.7` using `Math.round()`.
+// let num = 4.4
+// console.log(Math.round(num))
+
+// 2. Find the square root of 81.
+// let num1 = 81
+// console.log(Math.sqrt(num1))
+
+// 3. Find the maximum number from `10, 20, 5, 99`.
+// console.log(Math.max(10, 20, 5, 99))
+
+// 4. Generate a random number between 1 and 10.
+// console.log(Math.random()*10)
+
+// 5. Convert `"99.99"` into an integer.
+// console.log(Number(99.99))
+
+// 6. Check whether `25` is an integer or not.
+// console.log(Number.isInteger(25))
+
+// 7. Use `toFixed(2)` on `3.141592`.
+// console.log(3.141592.toFixed(2))
 
 
 
