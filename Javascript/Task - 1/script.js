@@ -268,6 +268,208 @@
 // console.log(3.141592.toFixed(2))
 
 
+// ## Conditionals
+
+// 1. Check whether a number is positive or negative.
+// let number = Number(prompt("Enter Your Number..!" ))
+// if(number < 0){
+//    console.log("Negative Number")
+// }else{
+//    console.log("Positive Number")
+// }
+
+
+// 2. Check whether a number is even or odd.
+// let number = Number(prompt("Enter Your Number..!" ))
+// if(number %2 == 0){
+//    console.log("Even Number")
+// }else{
+//    console.log("Odd Number")
+// }
+
+
+// 3. Check whether a person is eligible to vote.
+// let age = Number(prompt("Enter Your Age To Check Your are Eligible Or Not..!" ))
+// if(age >= 18){
+//    console.log("Your are Eligible")
+// }else{
+//    console.log("You are Not Eligible")
+// }
+
+
+// 4. Find the largest among two numbers.
+// let number1 = Number(prompt("Enter Your First Number..!" ))
+// let number2 = Number(prompt("Enter Your Second Number..!" ))
+// let number3 = Number(prompt("Enter Your Third Number..!" ))
+// if(number1 > number2){
+//    console.log(`${number1} is larger than ${number2}`)
+// }else if (number2 > number1){
+//    console.log(`${number2} is larger than ${number1}`)
+// }else{
+//    console.log("Both Are Equal")
+// }
+
+
+// 5. Find the largest among three numbers.
+// let number1 = Number(prompt("Enter Your First Number..!" ))
+// let number2 = Number(prompt("Enter Your Second Number..!" ))
+// let number3 = Number(prompt("Enter Your Third Number..!" ))
+// let number1 = 10
+// let number2 = 100
+// let number3 = 10
+// if(number1 > number2 && number1 > number3){
+//    console.log(`${number1} is larger than ${number2} and ${number3}`)
+// }else if (number2 > number1 && number2 > number3){
+//    console.log(`${number2} is larger than ${number1} and ${number3}`)
+// } else if(number3 > number1 && number3 > number2){
+//    console.log(`${number3} is larger than ${number1} and ${number2}`)
+// }
+// else{
+//    console.log("All Are Equal")
+// }
+
+
+// 6. Check whether a year is a leap year.
+// let year = 1900
+// if((year % 4 == 0 && year % 100 !== 0) || year % 400 == 0){
+//    console.log("Year Is Leap Year")
+// }else{
+//    console.log("Year Is Not Leap Year")
+// }
+// console.log(2024 % 400 == 0)
+
+// 7. Check whether a number is divisible by both 3 and 5.
+// let num = 15
+// if(num % 3 == 0 && num % 5 == 0){
+//    console.log(`num is divisible by both 3 and 5`)
+// }else{
+//    console.log(`num is not divisible by both 3 and 5`)
+// }
+
+// 8. Create a simple grading system:
+// - 90+ → A
+// - 75+ → B
+// - 50+ → C
+// - below 50 → Fail
+// let grade = 75
+// if( grade > 90){
+//    console.log("A")
+// }else if(grade > 75 && grade < 91){
+//    console.log("B")
+// }else if(grade >= 50 && grade < 76){
+//    console.log("C")
+// }else{
+//    console.log("Fail")
+// }
+
+// 1. Check whether a character is a vowel or consonant.
+// let char = "a"
+// if(char == "a" || char == "e" || char == "i" || char == "o" || char == "u"){
+//    console.log("Vowel")
+// }else{
+//    console.log("Consonant")
+// }
+
+
+// 2. Create a calculator using `switch` statement.
+// let num1 = 10
+// let num2 = 20
+// let operator = "/"
+
+// switch (operator) {
+//    case "+":
+//       console.log(num1 + num2)
+//       break
+//    case "-":
+//       console.log(num1 - num2)
+//       break 
+//    case "*":
+//       console.log(num1 * num2)
+//       break
+//    case "/":
+//       console.log(num1 / num2)
+//       break
+//    default:
+//       console.log("Invalid Operator")
+
+// }
+
+// 3. Print the day name based on a number (1–7).
+// let day = 8
+// switch(day){
+//    case 1:
+//       console.log("Monday")
+//       break
+//    case 2:
+//       console.log("Tuesday")
+//       break
+//    case 3:
+//       console.log("Wednesday")
+//       break
+//    case 4:
+//       console.log("Thursday")
+//       break
+//    case 5:
+//       console.log("Friday")
+//       break
+//    case 6:
+//       console.log("Saturday")
+//       break
+//    case 7:
+//       console.log("Sunday")
+//       break
+//    default:
+//       console.log("Invalid Day")
+
+// }
+
+// 4. Check whether a username is `"admin"` and password is `"1234"`.
+// let isAdmin = true
+// let password = "15234"
+
+// if(isAdmin && password == "1234"){
+//    console.log("Welcome Admin")
+// }else{
+//    console.log("You Are Not A Admin")
+// }
+
+
+// ## Truthy & Falsy
+
+// 1. Check whether an empty string is truthy or falsy.
+// let str = ""
+// if(str){
+//    console.log("True")
+// }else{
+//    console.log("False")
+// }
+
+
+// 2. Check whether `0` is truthy or falsy.
+// let num = 0
+// if(num){
+//    console.log("True")
+// }else{
+//    console.log("False")
+// }
+
+// 3. Check whether `[]` is truthy or falsy.
+// let arr = []
+// if(arr){
+//    console.log("True")
+// }else{
+//    console.log("False")
+// }
+
+
+// 4. Create a variable and print `"Valid"` if it has a value otherwise print `"Invalid"`.\
+// let variable = null
+// if(variable){
+//    console.log("Valid")
+// }else{
+//    console.log("Invalid")
+// }
+
 
 
 
