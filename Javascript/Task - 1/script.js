@@ -539,19 +539,19 @@
 
 
 // 7. Calculate electricity bill based on units consumed.
-let unit = 401
-if (unit > 0 && unit <= 100){
-   console.log("Your Bill Is" , unit * 4.2)
-}
-else if(unit> 100 && unit <= 200){
+// let unit = 401
+// if (unit > 0 && unit <= 100){
+//    console.log("Your Bill Is" , unit * 4.2)
+// }
+// else if(unit> 100 && unit <= 200){
    
-   console.log("Your Bill Is" , unit * 6)
-}
-else if(unit > 200 && unit <= 400){
-   console.log("Your Bill Is" , unit * 8)
-}else{
-   console.log("Your Bill Is" , unit * 13)
-}
+//    console.log("Your Bill Is" , unit * 6)
+// }
+// else if(unit > 200 && unit <= 400){
+//    console.log("Your Bill Is" , unit * 8)
+// }else{
+//    console.log("Your Bill Is" , unit * 13)
+// }
 
 
 
@@ -586,6 +586,36 @@ else if(unit > 200 && unit <= 400){
 //    }
 // }
 // console.log(count)
+
+
+
+
+// ## Logical Thinking Questions
+
+// 1. Take two numbers and print which one is greater..
+// let num1  = Number(prompt("Please Enter Your First Number"))
+// let num2  = Number(prompt("Please Enter Your Second Number"))
+// if(num1 > num2){
+//    console.log("Num1" , num1)
+// }else{
+//    console.log("Num2" , num2)
+// }
+
+
+// 2. Check whether a number lies between 10 and 50.
+
+
+
+// 3. Check whether a password length is greater than 8.
+// 4. Check if a person can drive:
+// - age > 18
+// - has license = true
+// 1. Check whether a number is divisible by 2, 3, or both.
+// 2. Print `"Good Morning"`, `"Good Afternoon"`, or `"Good Evening"` based on time.
+// 3. Find whether a number is a multiple of 10.
+// 4. Create a simple discount calculator.
+// 5. Check whether a product is in stock.
+// 6. Calculate final bill after GST.
 
 
 
