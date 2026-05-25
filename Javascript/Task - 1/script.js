@@ -471,6 +471,122 @@
 // }
 
 
+// ## Ternary Operator
+
+// 1. Check whether a number is even or odd using ternary operator.
+// let  num = 11
+// let result = (num % 2 == 0) ? "Even" : "Odd"
+// console.log(result)
+
+// 2. Check whether age is above 18 using ternary operator.
+// let age = 17
+// let result = (age>=18) ? "Adult" : "Minor"
+// console.log(result);
+
+
+// 3. Find the greater number between two values using ternary operator.
+// let num1 = 122
+// let num2 =122
+// let result = (num1 > num2) ? "Num1 Big" : (num2 > num1) ? "Num2 Big" : "Equal"
+// console.log(result);
+
+
+// ## Mixed Practice Questions
+
+// 1. Create a mini biodata program using variables and template literals.
+// let name = "Mohammad Kaif"
+// let age = 22
+// let city = "Gwalior"
+// let profession  = "Full Stack Developer"
+// console.log(`Hello My Self ${name}, Im ${age} Year Old , Lives In ${city} & Im A ${profession}`)
+
+// 2. Calculate the area of a rectangle.
+// let width = 20
+// let length = 30
+// let areaOfRectangle = length * width
+// console.log(areaOfRectangle)
+
+
+// 3. Calculate the simple interest.
+// let principle = 1000
+// let rate = 10
+// let time = 2
+// let si =    
+// console.log(si)
+
+
+// 4. Convert temperature from Celsius to Fahrenheit.
+// let celcius = 5
+// let change = (celcius * 9/5) + 32
+// console.log(`The Fahrenheit of ${celcius} degree celcius is ${change} Fahrenheit`);
+
+
+// 5. Convert kilometers into meters.
+// let kilometers = 5
+// let meter = kilometers * 1000
+// console.log(meter,"meters")
+
+// 6. Calculate total marks and percentage of 5 subjects.
+// let maths = 85
+// let english = 40
+// let hindi = 55
+// let physics = 58
+// let sanskrit = 50
+// let total = maths + english + hindi + physics +sanskrit
+// let percentage = (total / 500) * 100
+// console.log(percentage);
+
+
+
+// 7. Calculate electricity bill based on units consumed.
+let unit = 401
+if (unit > 0 && unit <= 100){
+   console.log("Your Bill Is" , unit * 4.2)
+}
+else if(unit> 100 && unit <= 200){
+   
+   console.log("Your Bill Is" , unit * 6)
+}
+else if(unit > 200 && unit <= 400){
+   console.log("Your Bill Is" , unit * 8)
+}else{
+   console.log("Your Bill Is" , unit * 13)
+}
+
+
+
+// 8. Create a username generator using first name and birth year.
+// let firstName = "Kaif"
+// let dob = "31/12/2002"
+// dob = dob.split("/").join("")
+// let username = firstName + dob
+// console.log(username)
+// console.log(dob)
+
+
+// 9. Check whether a string starts with a specific letter.
+// let str = "Kaif"
+// str = str.toLowerCase()
+// if(str.charAt(0) == "a" || str.charAt(0) == "b" || str.charAt(0) == "k" || str.charAt(0) == "c" || str.charAt(0) == "d"){
+
+//    console.log("Start With String")
+// }else{
+   
+//    console.log("Not Start With String")
+// }
+
+
+
+// 10. Count the total characters in a sentence excluding spaces.
+// let str = "Mohammad Kaif Shaikh"
+// let count = 0
+// for (let i = 0; i < str.length; i++) {
+//    if (str[i] != " ") {
+//       count += 1
+//    }
+// }
+// console.log(count)
+
 
 
 //Basic Age Confirmation Code
