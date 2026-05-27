@@ -544,7 +544,7 @@
 //    console.log("Your Bill Is" , unit * 4.2)
 // }
 // else if(unit> 100 && unit <= 200){
-   
+
 //    console.log("Your Bill Is" , unit * 6)
 // }
 // else if(unit > 200 && unit <= 400){
@@ -571,7 +571,7 @@
 
 //    console.log("Start With String")
 // }else{
-   
+
 //    console.log("Not Start With String")
 // }
 
@@ -603,20 +603,121 @@
 
 
 // 2. Check whether a number lies between 10 and 50.
-
+// let num = 15
+// if(num >= 10 && num<=50){
+//    console.log(num ,"number lies between 10 to 50")
+// }else{
+//    console.log("Not")
+// }
 
 
 // 3. Check whether a password length is greater than 8.
+// let password = "Kaifiya3112"
+// if(password.length <= 8){
+//    console.log("password  length must be greater than 8")
+// }else{
+//    console.log("User Registered Successfully")
+// }
+
 // 4. Check if a person can drive:
 // - age > 18
 // - has license = true
-// 1. Check whether a number is divisible by 2, 3, or both.
-// 2. Print `"Good Morning"`, `"Good Afternoon"`, or `"Good Evening"` based on time.
-// 3. Find whether a number is a multiple of 10.
-// 4. Create a simple discount calculator.
-// 5. Check whether a product is in stock.
-// 6. Calculate final bill after GST.
+// let age = 17
+// let hasLicense = false
 
+// if (age >= 18) {
+//    if (hasLicense) {
+//       console.log("You Can Drive")
+//    } else {
+//       console.log("Dont Have License")
+//    }
+// } else {
+//    console.log("User Is Not Eligible")
+// }
+
+
+// 1. Check whether a number is divisible by 2, 3, or both.
+// let num = 18
+// if(num % 2 == 0 && num % 3 ==0){
+//    console.log("divisible")
+// }else{
+//    console.log("no")
+// }
+
+// 2. Print `"Good Morning"`, `"Good Afternoon"`, or `"Good Evening"` based on time.
+
+// let time = 25
+
+// if(time < 12){
+//    console.log("Good Morning")
+// }else if(time >= 12 && time <= 18){
+//    console.log("Good Afternoon")
+// }else if(time > 18 && time < 25){
+//    console.log("Good Evening")
+// }else{
+//    console.log("Invalid")
+// }
+
+
+// 3. Find whether a number is a multiple of 10.
+// let num = 55
+// if(num % 10 == 0){
+//    console.log("divisible")
+// }else{
+
+//    console.log("not divisible")
+// }
+
+// 4. Create a simple discount calculator.
+// let price = 10000
+// let discount = 20
+// let finalDiscount = discount/100
+// // console.log(finalDiscount)
+// let calculateDiscount = price * finalDiscount
+// // console.log(calculateDiscount)
+
+// let final = price - calculateDiscount
+// console.log("After Applied" , discount + "$ discount" , "Your New Price Is" , final)
+
+
+// 5. Check whether a product is in stock.
+let product = "Jockey Underwear"
+let inStock = true
+
+if (product) {
+   if (inStock) {
+      console.log("product in stock available")
+   } else {
+
+      console.log("product not in stock available")
+   }
+} else {
+
+   console.log("product Not ")
+}
+
+// 6. Calculate final bill after GST.
+// let price = 2000
+// let gst = 18
+
+// let findGst = (price * gst) / 100
+// let finalPrice = price + findGst
+// console.log(finalPrice)
+
+
+
+// ## Challenge Questions for Beginners
+
+// 1. Generate a random OTP of 4 digits.
+// 2. Reverse a 3-letter string manually.
+// 3. Find the last character of a string.
+// 4. Convert a full name into uppercase initials.
+// 5. Check whether two strings are equal ignoring case sensitivity.
+// 6. Create a simple login validation system.
+// 7. Find whether a number is a 2-digit or 3-digit number.
+// 8. Create a mini ATM balance checker.
+// 9. Simulate a traffic light system using `switch`.
+// 10. Build a small marksheet generator using variables and conditionals.
 
 
 //Basic Age Confirmation Code
