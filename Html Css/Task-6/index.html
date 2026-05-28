@@ -1,0 +1,1515 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TwoLeavesTea | Assignment Six</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+  <header id="Header" class="w-full absolute z-50 top-0">
+  <!-- Topbar -->
+  <div
+    id="Topbar"
+    class="py-1.5 w-full font-semibold bg-[#2a2857] uppercase text-xs md:text-sm"
+  >
+    <h1 class="text-center text-white px-2">
+      Free US shipping for orders over $75
+    </h1>
+  </div>
+
+  <!-- Navbar -->
+  <nav
+    id="Navbar"
+    class="w-full bg-white border border-neutral-200 px-4 md:px-8 py-3 shadow-sm mt-4 relative"
+  >
+    <div class="flex items-center justify-between">
+      <!-- Mobile Hamburger -->
+      <button
+        id="menuBtn"
+        class="md:hidden flex items-center justify-center"
+      >
+        <i data-lucide="menu" class="h-7 w-7"></i>
+      </button>
+
+      <!-- Left Menu Desktop -->
+      <div
+        class="hidden md:flex items-center gap-10 font-roboto-condensed text-[18px] text-neutral-800"
+      >
+        <button
+          class="group flex items-center gap-2 transition-all duration-300 hover:text-black"
+        >
+          <span class="tracking-wide">Shop</span>
+
+          <i
+            data-lucide="circle-chevron-down"
+            class="h-5 w-5 transition-transform duration-300 group-hover:rotate-180"
+          ></i>
+        </button>
+
+        <button
+          class="group flex items-center gap-2 transition-all duration-300 hover:text-black"
+        >
+          <span class="tracking-wide">Learn</span>
+
+          <i
+            data-lucide="circle-chevron-down"
+            class="h-5 w-5 transition-transform duration-300 group-hover:rotate-180"
+          ></i>
+        </button>
+
+        <button
+          class="group flex items-center gap-2 transition-all duration-300 hover:text-black"
+        >
+          <span class="tracking-wide">Reviews</span>
+
+          <div class="flex text-[#ffb700] text-3xl">
+            <i class="fa-solid fa-star"></i>
+          </div>
+        </button>
+      </div>
+
+      <!-- Logo -->
+      <a href="#" class="shrink-0">
+        <img
+          class="h-8 md:h-10 object-contain"
+          src="https://www.twoleavestea.com/cdn/shop/files/Twoleaves_logo.svg?v=1768205424&width=420"
+          alt="Two Leaves Tea"
+        />
+      </a>
+
+      <!-- Right Menu Desktop -->
+      <div
+        class="hidden md:flex items-center gap-[22px] uppercase text-[10px] font-bold tracking-[1px] text-neutral-700"
+      >
+        <a
+          href="#"
+          class="relative pb-1 transition-all duration-300 hover:text-black after:absolute after:left-0 after:bottom-0 after:h-[1.5px] after:w-0 after:bg-black after:transition-all after:duration-300 hover:after:w-full"
+        >
+          My Account
+        </a>
+
+        <a
+          href="#"
+          class="relative pb-1 transition-all duration-300 hover:text-black after:absolute after:left-0 after:bottom-0 after:h-[1.5px] after:w-0 after:bg-black after:transition-all after:duration-300 hover:after:w-full"
+        >
+          Cafe & Wholesale Partners
+        </a>
+
+        <a
+          href="#"
+          class="relative pb-1 transition-all duration-300 hover:text-black after:absolute after:left-0 after:bottom-0 after:h-[1.5px] after:w-0 after:bg-black after:transition-all after:duration-300 hover:after:w-full"
+        >
+          Tea Journal
+        </a>
+
+        <!-- Cart -->
+        <button class="relative group">
+          <i
+            data-lucide="shopping-bag"
+            class="h-6 w-6 transition-transform duration-300 group-hover:scale-110"
+          ></i>
+
+          <span
+            class="absolute -top-2 -right-2 flex h-5 w-5 items-center justify-center rounded-full bg-[#ffb700] text-[10px] font-bold text-black"
+          >
+            0
+          </span>
+        </button>
+      </div>
+
+      <!-- Mobile Cart -->
+      <button class="relative group md:hidden">
+        <i data-lucide="shopping-bag" class="h-6 w-6"></i>
+
+        <span
+          class="absolute -top-2 -right-2 flex h-5 w-5 items-center justify-center rounded-full bg-[#ffb700] text-[10px] font-bold text-black"
+        >
+          0
+        </span>
+      </button>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div
+      id="mobileMenu"
+      class="hidden md:hidden flex-col gap-5 pt-6 pb-4"
+    >
+      <button class="flex items-center justify-between w-full">
+        <span>Shop</span>
+        <i data-lucide="circle-chevron-down" class="h-5 w-5"></i>
+      </button>
+
+      <button class="flex items-center justify-between w-full">
+        <span>Learn</span>
+        <i data-lucide="circle-chevron-down" class="h-5 w-5"></i>
+      </button>
+
+      <a href="#">Reviews</a>
+      <a href="#">My Account</a>
+      <a href="#">Cafe & Wholesale Partners</a>
+      <a href="#">Tea Journal</a>
+    </div>
+  </nav>
+</header>
+
+    <section class="Hero relative max-h-[95vh] w-full">
+      <!-- Overlay -->
+      <div class="absolute inset-0 bg-black/40"></div>
+
+      <!-- Content -->
+      <div class="absolute bottom-20 left-10 z-10 max-w-lg text-white">
+        <h2 class="text-7xl font-serif font-normal mb-4">
+          A cup that fits the moment.
+        </h2>
+
+        <p class="text-lg mb-6">
+          From compostable whole leaf tea sachets and iced tea to tea lattes and
+          matcha, we’ve got something for everyone.
+        </p>
+
+        <button
+          class="bg-[#2a2857] text-white px-15 py-3 rounded-full font-semibold border border-transparent hover:bg-white hover:text-black hover:border-[#2a2857] transition duration-300"
+        >
+          Shop Now
+        </button>
+      </div>
+
+      <!-- Floating Down Btn -->
+
+      <button
+        class="h-12 w-12 rounded-full bg-[#2a2857] text-white flex items-center justify-center border-1-black absolute -bottom-6 right-3"
+      >
+        <a href="#Section-2">
+          <i class="h-10 w-10 font-light" data-lucide="arrow-down"></i>
+        </a>
+      </button>
+    </section>
+
+    <hr />
+
+    <section id="Section-2" class="w-full">
+      <div class="max-w-2/4 m-auto pt-20">
+        <h1
+          class="text-center font-finlandica-headline text-4xl font-normal text-[#211d1b]"
+        >
+          A <span class="italic">great</span> cup starts with a careful pluck -
+          the top two leaves and a bud.
+        </h1>
+      </div>
+
+      <div class="pt-30">
+        <div
+          class="pt-20 pb-10 px-10 flex gap-4 overflow-x-auto overflow-y-hidden scroll-smooth"
+        >
+          <!-- Card -->
+          <div class="card min-h-120 min-w-[20rem]">
+            <div
+              class="h-2/3 border border-black rounded-xl bg-[#c0ed91] relative"
+            >
+              <img
+                class="h-full w-full object-contain object-center hover:scale-110 transition-transform"
+                src="https://www.twoleavestea.com/cdn/shop/files/organic_tropical_green_tea_sachet_featured.webp?v=1771579242&width=600.0"
+                alt="product img"
+              />
+              <!-- Name -->
+              <div
+                class="h-1/10 w-2/5 rounded font-bold flex items-center justify-center border border-black bg-white absolute top-2 left-2"
+              >
+                TEA SACHETS
+              </div>
+              <!-- Rating & Stock -->
+              <div
+                class="font-light flex items-center justify-end gap-1 absolute top-2 right-2"
+              >
+                <i class="fa-solid fa-star"></i>
+                <span>4.71</span>
+                <span>(84)</span>
+              </div>
+              <!-- Add to cart -->
+              <div
+                class="h-12 w-12 rounded-xl font-normal flex flex-col items-center justify-center border border-black bg-white absolute bottom-2 right-2 hover:bg-[#2a2857] hover:text-white transition duration-300"
+              >
+                <i data-lucide="plus"></i>
+                <span class="uppercase text-sm">Add</span>
+              </div>
+            </div>
+
+            <!-- Meta -->
+
+            <div class="pt-4">
+              <h2 class="capitalize font-serif font-medium text-xl">
+                Organic tropical green tea
+              </h2>
+
+              <span
+                class="flex py-3 items-center justify-start gap-2 capitalize"
+              >
+                from
+                <span class="flex items-center">
+                  <i class="h-4 w-4" data-lucide="dollar-sign"></i>
+                  11.95
+                </span>
+              </span>
+
+              <p class="capitalize text-gray-500">
+                Our Organic Tropical Green is a fruity and fun take on a classic
+                green tea.
+              </p>
+            </div>
+          </div>
+
+          <div class="card min-h-120 min-w-[20rem]">
+            <div
+              class="h-2/3 border border-black rounded-xl bg-[#ffd885] relative"
+            >
+              <img
+                class="h-full w-full object-contain object-center hover:scale-110 transition-transform"
+                src="https://www.twoleavestea.com/cdn/shop/files/bundle-herbal-tea-trio-featured-image.webp?v=1772174356&width=600"
+                alt="product img"
+              />
+              <!-- Name -->
+              <div
+                class="h-1/10 px-2 uppercase rounded font-bold flex items-center justify-center border border-black bg-white absolute top-2 left-2"
+              >
+                gift and samplers
+              </div>
+              <!-- Rating & Stock -->
+              <div
+                class="font-light flex items-center justify-end gap-1 absolute top-2 right-2"
+              >
+                <i class="fa-solid fa-star"></i>
+                <span>5</span>
+                <span>(w)</span>
+              </div>
+              <!-- Add to cart -->
+              <div
+                class="h-12 w-12 rounded-xl font-normal flex flex-col items-center justify-center border border-black bg-white absolute bottom-2 right-2 hover:bg-[#2a2857] hover:text-white transition duration-300"
+              >
+                <i data-lucide="plus"></i>
+                <span class="uppercase text-sm">Add</span>
+              </div>
+            </div>
+
+            <!-- Meta -->
+
+            <div class="pt-4">
+              <h2 class="capitalize font-serif font-medium text-xl">
+                herbal tea trio
+              </h2>
+
+              <span
+                class="flex py-3 items-center justify-start gap-2 capitalize"
+              >
+                from
+                <span class="flex items-center">
+                  <i class="h-4 w-4" data-lucide="dollar-sign"></i>
+                  33.30
+                </span>
+              </span>
+
+              <p class="text-gray-500">A trio of soothing herbal teas.</p>
+            </div>
+          </div>
+
+          <div class="card min-h-120 min-w-[20rem]">
+            <div
+              class="h-2/3 border border-black rounded-xl bg-[#b0e8c1] relative"
+            >
+              <img
+                class="h-full w-full object-contain object-center hover:scale-110 transition-transform"
+                src="https://www.twoleavestea.com/cdn/shop/files/peppermint_naked_featured.webp?v=1771580547&width=600"
+                alt="product img"
+              />
+              <!-- Name -->
+              <div
+                class="h-1/10 w-2/5 rounded font-bold flex items-center justify-center border border-black bg-white absolute top-2 left-2"
+              >
+                Naked Sachets
+              </div>
+              <!-- Rating & Stock -->
+              <div
+                class="font-light flex items-center justify-end gap-1 absolute top-2 right-2"
+              >
+                <i class="fa-solid fa-star"></i>
+                <span>5</span>
+                <span>(11)</span>
+              </div>
+              <!-- Add to cart -->
+              <div
+                class="h-12 w-12 rounded-xl font-normal flex flex-col items-center justify-center border border-black bg-white absolute bottom-2 right-2 hover:bg-[#2a2857] hover:text-white transition duration-300"
+              >
+                <i data-lucide="plus"></i>
+                <span class="uppercase text-sm">Add</span>
+              </div>
+            </div>
+
+            <!-- Meta -->
+
+            <div class="pt-4">
+              <h2 class="capitalize font-serif font-medium text-xl">
+                Organic peppermint - <br />
+                50 Naked tea sachets
+              </h2>
+
+              <span
+                class="flex py-3 items-center justify-start gap-2 capitalize"
+              >
+                from
+                <span class="flex items-center">
+                  <i class="h-4 w-4" data-lucide="dollar-sign"></i>
+                  21.95
+                </span>
+              </span>
+
+              <p class="capitalize text-gray-500">
+                Our organic Peppermint tea is made from peppermint grown in
+                Washington State.
+              </p>
+            </div>
+          </div>
+
+          <div class="card min-h-120 min-w-[20rem]">
+            <div class="h-2/3 border border-black rounded-xl bg-white relative">
+              <img
+                class="h-full w-full object-contain object-center hover:scale-110 transition-transform"
+                src="https://www.twoleavestea.com/cdn/shop/files/Bamboo_Tea_Chest.webp?v=1772543139&width=750.0"
+                alt="product img"
+              />
+              <!-- Name -->
+              <div
+                class="h-1/10 px-2 rounded font-bold flex items-center justify-center border border-black bg-white absolute uppercase top-2 left-2"
+              >
+                gifts and samplers
+              </div>
+              <!-- Rating & Stock -->
+              <div
+                class="font-light flex items-center justify-end gap-1 absolute top-2 right-2"
+              >
+                <i class="fa-solid fa-star"></i>
+                <span>4.85</span>
+                <span>(41)</span>
+              </div>
+              <!-- Add to cart -->
+              <div
+                class="h-12 w-12 rounded-xl font-normal flex flex-col items-center justify-center border border-black bg-white absolute bottom-2 right-2 hover:bg-[#2a2857] hover:text-white transition duration-300"
+              >
+                <i data-lucide="plus"></i>
+                <span class="uppercase text-sm">Add</span>
+              </div>
+            </div>
+
+            <!-- Meta -->
+
+            <div class="pt-4">
+              <h2 class="capitalize font-serif font-medium text-xl">
+                classic bamboo tea chest
+              </h2>
+
+              <span
+                class="flex py-3 items-center justify-start gap-2 capitalize"
+              >
+                from
+                <span class="flex items-center">
+                  <i class="h-4 w-4" data-lucide="dollar-sign"></i>
+                  42.95
+                </span>
+              </span>
+
+              <p class="capitalize text-gray-500">
+                This 6-slot bamboo box offers a sampling of eight sachets each
+                of six of our best selling teas.
+              </p>
+            </div>
+          </div>
+
+          <div class="card min-h-120 min-w-[20rem]">
+            <div
+              class="h-2/3 border border-black rounded-xl bg-[#c0e670] relative"
+            >
+              <img
+                class="h-full w-full object-contain object-center hover:scale-110 transition-transform"
+                src="https://www.twoleavestea.com/cdn/shop/files/Latte_Mix.webp?v=1771386671&width=600"
+                alt="product img"
+              />
+              <!-- Name -->
+              <div
+                class="h-1/10 w-2/5 rounded font-bold flex items-center justify-center border border-black bg-white absolute top-2 left-2"
+              >
+                LATTE MIX
+              </div>
+              <!-- Rating & Stock -->
+              <div
+                class="font-light flex items-center justify-end gap-1 absolute top-2 right-2"
+              >
+                <i class="fa-solid fa-star"></i>
+                <span>4.41</span>
+                <span>(22)</span>
+              </div>
+              <!-- Add to cart -->
+              <div
+                class="h-12 w-12 rounded-xl font-normal flex flex-col items-center justify-center border border-black bg-white absolute bottom-2 right-2 hover:bg-[#2a2857] hover:text-white transition duration-300"
+              >
+                <i data-lucide="plus"></i>
+                <span class="uppercase text-sm">Add</span>
+              </div>
+            </div>
+
+            <!-- Meta -->
+
+            <div class="pt-4">
+              <h2 class="capitalize font-serif font-medium text-xl">
+                Nice Matcha Tea Latte Mix
+              </h2>
+
+              <span
+                class="flex py-3 items-center justify-start gap-2 capitalize"
+              >
+                from
+                <span class="flex items-center">
+                  <i class="h-4 w-4" data-lucide="dollar-sign"></i>
+                  12.95
+                </span>
+              </span>
+
+              <p class="capitalize text-gray-500">
+                Our Nice Matcha is a lightly sweetened powdered mix meant for
+                making tea lattes simple.
+              </p>
+            </div>
+          </div>
+
+          <div class="card min-h-120 min-w-[20rem]">
+            <div
+              class="h-2/3 border border-black rounded-xl bg-[#ffcb96] relative"
+            >
+              <img
+                class="h-full w-full object-contain object-center hover:scale-110 transition-transform"
+                src="https://www.twoleavestea.com/cdn/shop/files/Latte_Mix_b400f40c-730f-4122-9058-cfc4e5bf8faf.webp?v=1771389945&width=600"
+                alt="product img"
+              />
+              <!-- Name -->
+              <div
+                class="h-1/10 w-2/5 rounded font-bold flex items-center justify-center border border-black bg-white absolute top-2 left-2"
+              >
+                LATTE MIX
+              </div>
+              <!-- Rating & Stock -->
+              <div
+                class="font-light flex items-center justify-end gap-1 absolute top-2 right-2"
+              >
+                <i class="fa-solid fa-star"></i>
+                <span>4.24</span>
+                <span>(17)</span>
+              </div>
+              <!-- Add to cart -->
+              <div
+                class="h-12 w-12 rounded-xl font-normal flex flex-col items-center justify-center border border-black bg-white absolute bottom-2 right-2 hover:bg-[#2a2857] hover:text-white transition duration-300"
+              >
+                <i data-lucide="plus"></i>
+                <span class="uppercase text-sm">Add</span>
+              </div>
+            </div>
+
+            <!-- Meta -->
+
+            <div class="pt-4">
+              <h2 class="capitalize font-serif font-medium text-xl">
+                Nice chai tea latte mix
+              </h2>
+
+              <span
+                class="flex py-3 items-center justify-start gap-2 capitalize"
+              >
+                from
+                <span class="flex items-center">
+                  <i class="h-4 w-4" data-lucide="dollar-sign"></i>
+                  12.95
+                </span>
+              </span>
+
+              <p class="capitalize text-gray-500">
+                Our Nice Chai is a not too sweet, not too spicy, powdered latte
+                mix meant for making tea lattes simple.
+              </p>
+            </div>
+          </div>
+
+          <div class="card min-h-120 min-w-[20rem]">
+            <div class="h-2/3 border border-black rounded-xl bg-white relative">
+              <img
+                class="h-full w-full object-contain object-center hover:scale-110 transition-transform"
+                src="https://www.twoleavestea.com/cdn/shop/files/organic_high_mountain_chai_tea_sachet_featured.webp?v=1771578289&width=600"
+                alt="product img"
+              />
+              <!-- Name -->
+              <div
+                class="h-1/10 w-2/5 rounded font-bold flex items-center justify-center border border-black bg-white absolute top-2 left-2"
+              >
+                TEA SACHETS
+              </div>
+              <!-- Rating & Stock -->
+              <div
+                class="font-light flex items-center justify-end gap-1 absolute top-2 right-2"
+              >
+                <i class="fa-solid fa-star"></i>
+                <span>4.79</span>
+                <span>(108)</span>
+              </div>
+              <!-- Add to cart -->
+              <div
+                class="h-12 w-12 rounded-xl font-normal flex flex-col items-center justify-center border border-black bg-white absolute bottom-2 right-2 hover:bg-[#2a2857] hover:text-white transition duration-300"
+              >
+                <i data-lucide="plus"></i>
+                <span class="uppercase text-sm">Add</span>
+              </div>
+            </div>
+
+            <!-- Meta -->
+
+            <div class="pt-4">
+              <h2 class="capitalize font-serif font-medium text-xl">
+                Organic mountain high tea chai
+              </h2>
+
+              <span
+                class="flex py-3 items-center justify-start gap-2 capitalize"
+              >
+                from
+                <span class="flex items-center">
+                  <i class="h-4 w-4" data-lucide="dollar-sign"></i>
+                  11.95
+                </span>
+              </span>
+
+              <p class="capitalize text-gray-500">
+                An ode to our Rocky Mountain roots, our organic Mountain High
+                Chai takes your tastebuds down a spice-filled ski slope.
+              </p>
+            </div>
+          </div>
+
+          <div class="card min-h-120 min-w-[20rem]">
+            <div class="h-2/3 border border-black rounded-xl bg-white relative">
+              <img
+                class="h-full w-full object-contain object-center hover:scale-110 transition-transform"
+                src="https://www.twoleavestea.com/cdn/shop/files/Naked_Tea.webp?v=1771401766&width=600"
+                alt="product img"
+              />
+              <!-- Name -->
+              <div
+                class="h-1/10 px-2 rounded font-bold flex items-center justify-center border border-black bg-white absolute top-2 left-2"
+              >
+                NAKED SACHETS
+              </div>
+              <!-- Rating & Stock -->
+              <div
+                class="font-light flex items-center justify-end gap-1 absolute top-2 right-2"
+              >
+                <i class="fa-solid fa-star"></i>
+                <span>4.56</span>
+                <span>(41)</span>
+              </div>
+              <!-- Add to cart -->
+              <div
+                class="h-12 w-12 rounded-xl font-normal flex flex-col items-center justify-center border border-black bg-white absolute bottom-2 right-2 hover:bg-[#2a2857] hover:text-white transition duration-300"
+              >
+                <i data-lucide="plus"></i>
+                <span class="uppercase text-sm">Add</span>
+              </div>
+            </div>
+
+            <!-- Meta -->
+
+            <div class="pt-4">
+              <h2 class="capitalize font-serif font-medium text-xl">
+                Organic Earl Grey - <br />50 Naked Tea Sachets
+              </h2>
+
+              <span
+                class="flex py-3 items-center justify-start gap-2 capitalize"
+              >
+                from
+                <span class="flex items-center">
+                  <i class="h-4 w-4" data-lucide="dollar-sign"></i>
+                  21.95
+                </span>
+              </span>
+
+              <p class="capitalize text-gray-500">
+                Earl Grey's distinctive aroma comes from bergamot - a citrus
+                fruit about the size of an orange but yellow-green and slightly
+                pear-shaped.
+              </p>
+            </div>
+          </div>
+
+          <div class="card min-h-120 min-w-[20rem]">
+            <div
+              class="h-2/3 border border-black rounded-xl bg-[#afe1fa] relative"
+            >
+              <img
+                class="h-full w-full object-contain object-center hover:scale-110 transition-transform"
+                src="https://www.twoleavestea.com/cdn/shop/files/alpine_berry_naked_featured.webp?v=1771496640&width=600"
+                alt="product img"
+              />
+              <!-- Name -->
+              <div
+                class="h-1/10 px-2 rounded font-bold flex items-center justify-center border border-black bg-white absolute top-2 left-2"
+              >
+                NAKED SACHETS
+              </div>
+              <!-- Rating & Stock -->
+              <div
+                class="font-light flex items-center justify-end gap-1 absolute top-2 right-2"
+              >
+                <i class="fa-solid fa-star"></i>
+                <span>4</span>
+                <span>(5)</span>
+              </div>
+              <!-- Add to cart -->
+              <div
+                class="h-12 w-12 rounded-xl font-normal flex flex-col items-center justify-center border border-black bg-white absolute bottom-2 right-2 hover:bg-[#2a2857] hover:text-white transition duration-300"
+              >
+                <i data-lucide="plus"></i>
+                <span class="uppercase text-sm">Add</span>
+              </div>
+            </div>
+
+            <!-- Meta -->
+
+            <div class="pt-4">
+              <h2 class="capitalize font-serif font-medium text-xl">
+                Alpine Berry - <br />15 Naked Tea Sachets
+              </h2>
+
+              <span
+                class="flex py-3 items-center justify-start gap-2 capitalize"
+              >
+                from
+                <span class="flex items-center">
+                  <i class="h-4 w-4" data-lucide="dollar-sign"></i>
+                  8.95
+                </span>
+              </span>
+
+              <p class="capitalize text-gray-500">
+                Our signature herbal blend, Alpine Berry is a caffeine-free,
+                naturally sweet and tart tea.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="flex items-center justify-center mt-10 pb-30">
+          <span
+            class="capitalize py-3 px-15 font-semibold rounded-4xl border hover:border-black hover:bg-white hover:text-black text-white bg-[#2a2857] transition"
+            >explore all teas</span
+          >
+        </div>
+      </div>
+    </section>
+
+    <hr class="h-0.5 border-none bg-black" />
+
+    <section class="pt-30">
+      <div class="max-w-[60vw] m-auto">
+        <div class="flex items-center justify-start pb-10">
+          <span
+            class="uppercase p-3 font-finlandica-headline -rotate-2 border border-1-black rounded font-extrabold text-4xl text-[#211d1b] bg-[#ff8030]"
+            >discover</span
+          >
+        </div>
+
+        <p class="text-5xl font-sans font-light pb-20">
+          Let’s find a cup that fits the <span class="italic">moment</span> .
+          <br />
+          What are you searching for?
+        </p>
+
+        <div class="w-full pb-30">
+          <input
+            id="typingInput"
+            type="text"
+            class="max-w-xl text-4xl border border-black rounded-2xl px-5 py-10 outline-none focus:w-full focus:max-w-none transition-all duration-500"
+            placeholder=""
+          />
+        </div>
+
+        <div class="capitalize">
+          <p class="uppercase font-semibold">or explore by vibe...</p>
+
+          <div class="max-w-4xl p-5 font-sans select-none">
+            <!-- Flex container for wrapping tags -->
+            <div class="flex flex-wrap gap-x-2 gap-y-2.5 items-center">
+              <button
+                class="px-4 py-2 border border-black hover:bg-[#a2c9fc] bg-blue-50/40 text-[#2c3e50] text-[17px] font-serif rounded-lg tracking-wide transition-colors duration-150 cursor-pointer"
+              >
+                A Sweet Treat
+              </button>
+              <button
+                class="px-4 py-2 border border-black hover:bg-[#a2c9fc] bg-blue-50/40 text-[#2c3e50] text-[17px] font-serif rounded-lg tracking-wide transition-colors duration-150 cursor-pointer"
+              >
+                Evening Unwind
+              </button>
+              <button
+                class="px-4 py-2 border border-black hover:bg-[#a2c9fc] bg-blue-50/40 text-[#2c3e50] text-[17px] font-serif rounded-lg tracking-wide transition-colors duration-150 cursor-pointer"
+              >
+                Focused & Clear
+              </button>
+              <button
+                class="px-4 py-2 border border-black hover:bg-[#a2c9fc] bg-blue-50/40 text-[#2c3e50] text-[17px] font-serif rounded-lg tracking-wide transition-colors duration-150 cursor-pointer"
+              >
+                Caffeine!
+              </button>
+              <button
+                class="px-4 py-2 border border-black hover:bg-[#a2c9fc] bg-blue-50/40 text-[#2c3e50] text-[17px] font-serif rounded-lg tracking-wide transition-colors duration-150 cursor-pointer"
+              >
+                Caffeine-Free
+              </button>
+              <button
+                class="px-4 py-2 border border-black hover:bg-[#a2c9fc] bg-blue-50/40 text-[#2c3e50] text-[17px] font-serif rounded-lg tracking-wide transition-colors duration-150 cursor-pointer"
+              >
+                Ceremony-Worthy
+              </button>
+              <button
+                class="px-4 py-2 border border-black hover:bg-[#a2c9fc] bg-blue-50/40 text-[#2c3e50] text-[17px] font-serif rounded-lg tracking-wide transition-colors duration-150 cursor-pointer"
+              >
+                Whole Leaf
+              </button>
+              <button
+                class="px-4 py-2 border border-black hover:bg-[#a2c9fc] bg-blue-50/40 text-[#2c3e50] text-[17px] font-serif rounded-lg tracking-wide transition-colors duration-150 cursor-pointer"
+              >
+                Over Ice
+              </button>
+              <button
+                class="px-4 py-2 border border-black hover:bg-[#a2c9fc] bg-blue-50/40 text-[#2c3e50] text-[17px] font-serif rounded-lg tracking-wide transition-colors duration-150 cursor-pointer"
+              >
+                Lattes
+              </button>
+              <button
+                class="px-4 py-2 border border-black hover:bg-[#a2c9fc] bg-blue-50/40 text-[#2c3e50] text-[17px] font-serif rounded-lg tracking-wide transition-colors duration-150 cursor-pointer"
+              >
+                Black Tea
+              </button>
+              <button
+                class="px-4 py-2 border border-black hover:bg-[#a2c9fc] bg-blue-50/40 text-[#2c3e50] text-[17px] font-serif rounded-lg tracking-wide transition-colors duration-150 cursor-pointer"
+              >
+                Green Tea
+              </button>
+              <button
+                class="px-4 py-2 border border-black hover:bg-[#a2c9fc] bg-blue-50/40 text-[#2c3e50] text-[17px] font-serif rounded-lg tracking-wide transition-colors duration-150 cursor-pointer"
+              >
+                Herbal Tea
+              </button>
+              <button
+                class="px-4 py-2 border border-black hover:bg-[#a2c9fc] bg-blue-50/40 text-[#2c3e50] text-[17px] font-serif rounded-lg tracking-wide transition-colors duration-150 cursor-pointer"
+              >
+                Organic
+              </button>
+              <button
+                class="px-4 py-2 border border-black hover:bg-[#a2c9fc] bg-blue-50/40 text-[#2c3e50] text-[17px] font-serif rounded-lg tracking-wide transition-colors duration-150 cursor-pointer"
+              >
+                Barista Favorite
+              </button>
+              <button
+                class="px-4 py-2 border border-black hover:bg-[#a2c9fc] bg-blue-50/40 text-[#2c3e50] text-[17px] font-serif rounded-lg tracking-wide transition-colors duration-150 cursor-pointer"
+              >
+                Calm & Cozy
+              </button>
+              <button
+                class="px-4 py-2 border border-black hover:bg-[#a2c9fc] bg-blue-50/40 text-[#2c3e50] text-[17px] font-serif rounded-lg tracking-wide transition-colors duration-150 cursor-pointer"
+              >
+                Fruit Forward
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="relative">
+      <div class="w-full py-5 section-3">
+        <div class="flex items-center justify-center pt-30">
+          <span
+            class="uppercase p-3 font-sans -rotate-2 border border-1-black rounded font-extrabold text-4xl text-[#211d1b] bg-[#a2c9fc]"
+            >our origins</span
+          >
+        </div>
+
+        <div
+          class="absolute top-2 right-8 w-44 h-44 flex items-center justify-center rounded-full bg-[#CCF02F] border-[3px] border-emerald-950 shadow-md select-none"
+        >
+          <img
+            src="https://www.twoleavestea.com/cdn/shop/files/From_farm_to_kettle_c340e18e-6549-4712-b2b1-b64a827e6338.svg?v=1773116502&width=280"
+            alt=""
+          />
+        </div>
+
+        <h1
+          class="uppercase text-9xl font-extrabold text-center font-sans mt-10 text-white"
+        >
+          born in <br />
+          colorado
+        </h1>
+
+        <h4 class="max-w-[80%] m-auto text-center text-5xl pt-40 text-white">
+          Our founder, Richard, started Two Leaves and a Bud in pursuit of a
+          truly great cup. Two decades later, that same care and curiosity guide
+          everything we make.
+        </h4>
+
+        <div class="flex items-center justify-center gap-10 mt-60">
+          <div class="flex items-center justify-center flex-col gap-3">
+            <img
+              class="h-[100px] w-[100px]"
+              src="https://www.twoleavestea.com/cdn/shop/files/Quality_without_pretense.svg?v=1773116402&width=146"
+              alt="plant"
+            />
+            <h4 class="uppercase font-semibold text-center text-white">
+              quality, without <br />
+              pretense
+            </h4>
+          </div>
+
+          <div class="flex items-center justify-center flex-col gap-3">
+            <img
+              class="h-[100px] w-[100px]"
+              src="https://www.twoleavestea.com/cdn/shop/files/care_for_ppl_1.svg?v=1773116330&width=144"
+              alt="earth"
+              srcset=""
+            />
+            <h4 class="uppercase font-semibold text-center text-white">
+              care for people & <br />
+              planet
+            </h4>
+          </div>
+
+          <div class="flex items-center justify-center flex-col gap-3">
+            <img
+              class="h-[100px] w-[100px]"
+              src="https://www.twoleavestea.com/cdn/shop/files/transparent_sourcing.svg?v=1773116421&width=122"
+              alt="mountain"
+              srcset=""
+            />
+            <h4 class="uppercase font-semibold text-center text-white">
+              transparent <br />
+              sourcing
+            </h4>
+          </div>
+        </div>
+
+        <div class="flex items-center justify-center mt-30 pb-30">
+          <span
+            class="capitalize py-3 px-15 font-semibold rounded-4xl bg-[#2a2857] border hover:border-black hover:bg-white hover:text-black text-white transition"
+            >Our Story</span
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- Reviews Section -->
+
+    <section class="pb-40">
+      <div class="py-25 px-45">
+        <div class="flex items-center justify-start">
+          <span
+            class="uppercase p-3 font-sans -rotate-2 border border-1-black rounded font-extrabold text-4xl text-[#211d1b] bg-[#74bd26]"
+            >Reviews</span
+          >
+        </div>
+        <h2 class="font-sans pt-10 text-6xl font-medium">
+          Loved by tea people everywhere . <br />
+          Here’s what they’re saying.
+        </h2>
+      </div>
+
+      <!-- Reviews -->
+
+      <div class="px-10 py-10 flex items-center justify-center gap-3 flex-wrap">
+        <!-- Review Card -->
+
+        <div class="h-110 w-80 border border-black rounded-2xl bg-[#f5af89]">
+          <div
+            class="h-3/4 w-full flex items-center justify-center flex-col gap-3"
+          >
+            <h3 class="text-center text-3xl">“The right amount of spice.”</h3>
+
+            <h4 class="text-center text-sm">Angelina R.</h4>
+          </div>
+
+          <div class="p-2 h-1/4">
+            <div
+              class="border rounded-3xl h-full w-full flex items-center justify-around bg-[#eb6e44]"
+            >
+              <img
+                src="https://www.twoleavestea.com/cdn/shop/files/Organic-Mtn-High-Chai-R15-angle_square_KO_1_2.png?v=1770086173&width=144"
+                class="h-24 w-24 object-center"
+              />
+
+              <hr class="border-none bg-black h-full w-0.5" />
+
+              <span class="uppercase text-sm"
+                >organic <br />
+                mountain <br />
+                high chai</span
+              >
+
+              <button class="px-4 py-2 rounded-2xl border bg-white">
+                Shop
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="h-110 w-80 border border-black rounded-2xl bg-[#aade73]">
+          <div
+            class="h-3/4 w-full flex items-center justify-center flex-col gap-3"
+          >
+            <h3 class="text-center text-2xl">
+              “This drink is incredibly refreshing, especially when served over
+              ice. It’s light, crisp, and instantly cooling, making it perfect
+              for a quick refresh any time of day. ”
+            </h3>
+
+            <h4 class="text-center text-sm">Jacob K.</h4>
+          </div>
+
+          <div class="p-2 h-1/4">
+            <div
+              class="border rounded-3xl h-full w-full flex items-center justify-around bg-[#74bd26]"
+            >
+              <img
+                src="https://www.twoleavestea.com/cdn/shop/files/Organic-Mtn-High-Chai-R15-angle_square_KO_1.png?v=1770085601&width=144"
+                class="h-24 w-24 object-center"
+              />
+
+              <hr class="border-none bg-black h-full w-0.5" />
+
+              <span class="uppercase text-sm"
+                >organic <br />
+                matcha <br />
+                mint</span
+              >
+
+              <button class="px-4 py-2 rounded-2xl border bg-white">
+                Shop
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="h-110 w-80 border border-black rounded-2xl bg-[#ffd166]">
+          <div
+            class="h-3/4 w-full flex items-center justify-center flex-col gap-3"
+          >
+            <h3 class="text-center text-2xl">
+              “One sip and you can feel the difference—clean energy, rich
+              flavor, and all the good stuff your body loves. Literally liquid
+              GOLD.”
+            </h3>
+
+            <h4 class="text-center text-sm">Harrison G.</h4>
+          </div>
+
+          <div class="p-2 h-1/4">
+            <div
+              class="border rounded-3xl h-full w-full flex items-center justify-around bg-[#ffb700]"
+            >
+              <img
+                src="https://www.twoleavestea.com/cdn/shop/files/Organic-Mtn-High-Chai-R15-angle_square_KO_1_1.png?v=1770085950&width=144"
+                class="h-24 w-24 object-center"
+              />
+
+              <hr class="border-none bg-black h-full w-0.5" />
+
+              <span class="uppercase text-sm"
+                >two roots <br />
+                golden <br />
+                latte mix</span
+              >
+
+              <button class="px-4 py-2 rounded-2xl border bg-white">
+                Shop
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="h-110 w-80 border border-black rounded-2xl bg-[#ace673]">
+          <div
+            class="h-3/4 w-full flex items-center justify-center flex-col gap-3"
+          >
+            <h3 class="text-center text-3xl">“Soo tasty and energizing.”</h3>
+
+            <h4 class="text-center text-sm">Gracie M.</h4>
+          </div>
+
+          <div class="p-2 h-1/4">
+            <div
+              class="border rounded-3xl h-full w-full flex items-center justify-around bg-[#8abf45]"
+            >
+              <img
+                src="https://www.twoleavestea.com/cdn/shop/files/Organic-Mtn-High-Chai-R15-angle_square_KO_1_3.png?v=1770086264&width=144"
+                class="h-24 w-24 object-center"
+              />
+
+              <hr class="border-none bg-black h-full w-0.5" />
+
+              <span class="uppercase text-sm"
+                >organic <br />
+                tropical <br />
+                green tea</span
+              >
+
+              <button class="px-4 py-2 rounded-2xl border bg-white">
+                Shop
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="h-110 w-80 border border-black rounded-2xl bg-white">
+          <div
+            class="h-3/4 w-full flex items-center justify-center flex-col gap-3"
+          >
+            <h3 class="text-center text-3xl">“The perfect start to my day.”</h3>
+
+            <h4 class="text-center text-sm">Jorge F.</h4>
+          </div>
+
+          <div class="p-2 h-1/4">
+            <div
+              class="border rounded-3xl h-full w-full flex items-center justify-around bg-[#c791db]"
+            >
+              <img
+                src="https://www.twoleavestea.com/cdn/shop/files/Organic-Mtn-High-Chai-R15-angle_square_KO_1_4.png?v=1770086316&width=144"
+                class="h-24 w-24 object-center"
+              />
+
+              <hr class="border-none bg-black h-full w-0.5" />
+
+              <span class="uppercase text-sm"
+                >jasmine <br />
+                petal
+              </span>
+
+              <button class="px-4 py-2 rounded-2xl border bg-white">
+                Shop
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--Partners and Wholesellers  -->
+    <section class="h-screen w-full grid grid-cols-1 md:grid-cols-2">
+      <!-- Left Image -->
+      <div class="h-full w-full overflow-hidden">
+        <img
+          class="h-full w-full object-cover object-center"
+          src="https://www.twoleavestea.com/cdn/shop/files/Our_Cafe_Wholesale_Partners.webp?v=1773753185&width=3200"
+          alt=""
+        />
+      </div>
+
+      <!-- Right Content -->
+      <div
+        class="flex h-full w-full items-center justify-center p-10 bg-[#2a2857]"
+      >
+        <div class="text-center md:text-left text-white">
+          <h2 class="text-6xl font-semibold font-sans mb-4">
+            Our Café & <br />
+            Wholesale Partners
+          </h2>
+          <p class="text-2xl">
+            From local cafés to national chains, our teas <br />power thousands
+            of baristas every day.
+          </p>
+
+          <button
+            class="py-4 px-20 mt-20 rounded-3xl bg-white text-black hover:bg-[#2a2857] hover:text-white hover:border-2 hover:border-black"
+          >
+            Learn More
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Product Crousel -->
+    <section class="w-full py-20 relative bg-[#9e6429] border-b">
+      <div class="flex items-center justify-center flex-col gap-4">
+        <span
+          class="uppercase p-3 font-sans -rotate-2 border border-1-black rounded font-extrabold text-4xl text-[#211d1b] bg-[#ffcb96]"
+          >our lattes</span
+        >
+
+        <h2 class="text-6xl font-bold uppercase text-white">
+          Barista Blends for Every Mood
+        </h2>
+
+        <span class="text-sm uppercase text-white font-semibold"
+          >(No training required)</span
+        >
+      </div>
+
+      <div class="absolute top-5 right-5">
+        <img
+          src="https://www.twoleavestea.com/cdn/shop/files/designed_for_ease.svg?v=1773116538&width=280"
+          class="h-34 w-34"
+          alt=""
+        />
+      </div>
+
+      <div class="px-6 pt-30">
+        <div
+          class="border relative rounded-2xl flex items-end justify-end px-10 py-15 gap-5 bg-[#ffcb96]"
+        >
+          <div class="absolute -top-12 left-6">
+            <img
+              src="https://www.twoleavestea.com/cdn/shop/files/Nice_Chai.webp?v=1773826534&width=720"
+              alt=""
+              class="h-120"
+            />
+          </div>
+
+          <div class="max-w-md">
+            <div class="flex items-start justify-start flex-col gap-4">
+              <span
+                class="uppercase p-3 font-sans -rotate-2 border border-1-black rounded font-extrabold text-4xl text-[#211d1b] bg-[#f09f54]"
+                >NICE</span
+              >
+
+              <h2 class="text-6xl font-sans font-light">
+                Chai <br />
+                Latte Mix
+              </h2>
+
+              <p class="font-semibold text-xl">
+                Our Nice Chai is a not too sweet, not too spicy, powdered latte
+                mix meant for making tea lattes simple.
+              </p>
+
+              <button
+                class="bg-white px-15 py-3 border rounded-3xl hover:bg-[#2a2857] hover:text-white hover:font-semibold hover:border-none transition-all"
+              >
+                Shop Now
+              </button>
+            </div>
+          </div>
+
+          <button
+            class="absolute top-[48%] left-10 border px-5 py-5 rounded-full bg-white font-semibold flex items-center justify-center hover:border-[#2a2857] hover:bg-[#2a2857] hover:text-white hover:font-semibold"
+          >
+            <i data-lucide="chevron-left" class="h-5 w-5"></i>
+          </button>
+          <button
+            class="absolute top-[48%] right-10 border px-5 py-5 rounded-full bg-white font-semibold flex items-center justify-center hover:border-[#2a2857] hover:bg-[#2a2857] hover:text-white hover:font-semibold"
+          >
+            <i data-lucide="chevron-right" class="h-5 w-5"></i>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Blogs Section -->
+
+    <section class="">
+      <div class="px-25 py-20">
+        <div class="flex items-center justify-start">
+          <span
+            class="uppercase p-3 font-sans -rotate-2 border border-1-black rounded font-extrabold text-4xl text-[#211d1b] bg-[#ffb700]"
+            >journal</span
+          >
+        </div>
+
+        <h2 class="text-5xl font-serif pt-10">
+          A community steeped in curiosity . Explore <br />
+          recipes, culture, and everyday tea wisdom.
+        </h2>
+      </div>
+
+      <div
+        class="px-10 mb-20 pt-20 w-full flex items-center justify-start gap-4 flex-nowrap overflow-x-auto scroll-smooth"
+      >
+        <!-- Blogs Card -->
+
+        <div
+          id="BlogCard"
+          class="h-100 min-w-80 border rounded-2xl overflow-hidden relative"
+        >
+          <div
+            class="h-4/5 w-full bg-[#2a2857] transition-transform duration-300 hover:scale-105"
+          >
+            <img
+              src="https://www.twoleavestea.com/cdn/shop/articles/enjoy_9b280eb3-acdd-47d2-ba91-0d2f259d3d66.svg?v=1774545568&width=600"
+              class="h-full w-full object-contain"
+              alt=""
+            />
+          </div>
+
+          <div
+            class="px-1 py-1 border bg-white rounded absolute top-2 left-2 font-semibold"
+          >
+            <span class="uppercase">recipe</span>
+          </div>
+
+          <div class="bg-[#c0dbff] h-1/5 w-full py-2 px-3">
+            <p class="uppercase">london fog earl grey latte</p>
+          </div>
+        </div>
+
+        <div
+          id="BlogCard"
+          class="h-100 min-w-80 border rounded-2xl overflow-hidden relative"
+        >
+          <div
+            class="h-4/5 w-full bg-[#2a2857] transition-transform duration-300 hover:scale-105"
+          >
+            <img
+              src="https://www.twoleavestea.com/cdn/shop/articles/Two_Leaves_May_25_Shoot-36_16x9_6008ffcb-7380-43d9-b1f6-b1f542f934b0.jpg?v=1773683613&width=600"
+              class="h-full w-full object-cover aspect-square"
+              alt=""
+            />
+          </div>
+
+          <div
+            class="px-1 py-1 border bg-white rounded absolute top-2 left-2 font-semibold"
+          >
+            <span class="uppercase">caffeine</span>
+          </div>
+
+          <div class="bg-[#c0dbff] h-1/5 w-full py-2 px-3">
+            <p class="uppercase">nice matcha drinks to delight!</p>
+          </div>
+        </div>
+
+        <div
+          id="BlogCard"
+          class="h-100 min-w-80 border rounded-2xl overflow-hidden relative"
+        >
+          <div
+            class="h-4/5 w-full bg-[#2a2857] transition-transform duration-300 hover:scale-105"
+          >
+            <img
+              src="https://www.twoleavestea.com/cdn/shop/articles/Two_Leaves_May_25_Shoot-24_SQ.jpg?v=1775656199&width=600"
+              class="h-full w-full object-cover"
+              alt=""
+            />
+          </div>
+
+          <div
+            class="px-1 py-1 border bg-white rounded absolute top-2 left-2 font-semibold"
+          >
+            <span class="uppercase">matcha</span>
+          </div>
+
+          <div class="bg-[#c0dbff] h-1/5 w-full py-2 px-3">
+            <p class="uppercase">"Nice" iced matcha latte</p>
+          </div>
+        </div>
+
+        <div
+          id="BlogCard"
+          class="h-100 min-w-80 border rounded-2xl overflow-hidden relative"
+        >
+          <div
+            class="h-4/5 w-full bg-[#2a2857] transition-transform duration-300 hover:scale-105"
+          >
+            <img
+              src="https://www.twoleavestea.com/cdn/shop/articles/chef_s_matcha_mix_9ae88222-5d88-415f-a90d-4cd0e47af7d8.svg?v=1775654273&width=600"
+              class="h-full w-full object-contain"
+              alt=""
+            />
+          </div>
+
+          <div
+            class="px-1 py-1 border bg-white rounded absolute top-2 left-2 font-semibold"
+          >
+            <span class="uppercase">matcha</span>
+          </div>
+
+          <div class="bg-[#c0dbff] h-1/5 w-full py-2 px-3">
+            <p class="uppercase">matcha energy balls</p>
+          </div>
+        </div>
+
+        <div
+          id="BlogCard"
+          class="h-100 min-w-80 border rounded-2xl overflow-hidden relative"
+        >
+          <div
+            class="h-4/5 w-full bg-[#2a2857] transition-transform duration-300 hover:scale-105"
+          >
+            <img
+              src="https://www.twoleavestea.com/cdn/shop/articles/ceremonial-matcha-tea-organic_1cf6ef8d-b56a-483f-8d58-29f7667bd97a.svg?v=1773688403&width=600"
+              class="h-full w-full object-contain"
+              alt=""
+            />
+          </div>
+
+          <div
+            class="px-1 py-1 border bg-white rounded absolute top-2 left-2 font-semibold"
+          >
+            <span class="uppercase">tea 101</span>
+          </div>
+
+          <div class="bg-[#c0dbff] h-1/5 w-full py-2 px-3">
+            <p class="uppercase">5 reasons to choose organic teas</p>
+          </div>
+        </div>
+
+        <div
+          id="BlogCard"
+          class="h-100 min-w-80 border rounded-2xl overflow-hidden relative"
+        >
+          <div
+            class="h-4/5 w-full bg-[#2a2857] transition-transform duration-300 hover:scale-105"
+          >
+            <img
+              src="https://www.twoleavestea.com/cdn/shop/articles/easy_to_prepare_cold_d444ce3d-bb29-4de5-83ae-4aef3582392b.svg?v=1775655934&width=600"
+              class="h-full w-full object-contain"
+              alt=""
+            />
+          </div>
+
+          <div
+            class="px-1 py-1 border bg-white rounded absolute top-2 left-2 font-semibold"
+          >
+            <span class="uppercase">matcha</span>
+          </div>
+
+          <div class="bg-[#c0dbff] h-1/5 w-full py-2 px-3">
+            <p class="uppercase">grinch latte</p>
+          </div>
+        </div>
+
+        <div
+          id="BlogCard"
+          class="h-100 min-w-80 border rounded-2xl overflow-hidden relative"
+        >
+          <div
+            class="h-4/5 w-full bg-[#2a2857] transition-transform duration-300 hover:scale-105"
+          >
+            <img
+              src="https://www.twoleavestea.com/cdn/shop/articles/easy_to_prepare_cold_d2bb63c1-ef3c-4bd5-ac42-ecce65535274.svg?v=1775654474&width=600"
+              class="h-full w-full object-contain"
+              alt=""
+            />
+          </div>
+
+          <div
+            class="px-1 py-1 border bg-white rounded absolute top-2 left-2 font-semibold"
+          >
+            <span class="uppercase">chai</span>
+          </div>
+
+          <div class="bg-[#c0dbff] h-1/5 w-full py-2 px-3">
+            <p class="uppercase">pecan pie chai</p>
+          </div>
+        </div>
+
+        <div
+          id="BlogCard"
+          class="h-100 min-w-80 border rounded-2xl overflow-hidden relative"
+        >
+          <div
+            class="h-4/5 w-full bg-[#2a2857] transition-transform duration-300 hover:scale-105"
+          >
+            <img
+              src="https://www.twoleavestea.com/cdn/shop/articles/easy_to_prepare_cold_a1481296-482f-4c15-a022-cb3b312388d1.svg?v=1775656011&width=600"
+              class="h-full w-full object-contain"
+              alt=""
+            />
+          </div>
+
+          <div
+            class="px-1 py-1 border bg-white rounded absolute top-2 left-2 font-semibold"
+          >
+            <span class="uppercase">chai</span>
+          </div>
+
+          <div class="bg-[#c0dbff] h-1/5 w-full py-2 px-3">
+            <p class="uppercase">spiced apple chaider</p>
+          </div>
+        </div>
+
+        <div
+          id="BlogCard"
+          class="h-100 min-w-80 border rounded-2xl overflow-hidden relative"
+        >
+          <div
+            class="h-4/5 w-full bg-[#2a2857] transition-transform duration-300 hover:scale-105"
+          >
+            <img
+              src="https://www.twoleavestea.com/cdn/shop/articles/mountain-high-chai-naked-tea-pour_bc4facfe-d769-467b-9d98-1ca8bc3c10a5.svg?v=1775656147&width=600"
+              class="h-full w-full object-contain"
+              alt=""
+            />
+          </div>
+
+          <div
+            class="px-1 py-1 border bg-white rounded absolute top-2 left-2 font-semibold"
+          >
+            <span class="uppercase">chai</span>
+          </div>
+
+          <div class="bg-[#c0dbff] h-1/5 w-full py-2 px-3">
+            <p class="uppercase">mountain high chai horchata</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="w-full flex items-center justify-center py-10">
+        <button
+          class="uppercase text-white font-semibold bg-[#2a2857] px-15 py-4 rounded-3xl hover:border hover:bg-white hover:text-black"
+        >
+          explore the tea journal
+        </button>
+      </div>
+    </section>
+
+    <section class="section-4 h-screen w-full relative">
+      <div
+        class="min-h-[90%] min-w-100 max-w-100 border bg-[#f26412] absolute top-[5%] left-10 rounded-2xl px-15 flex flex-col justify-around"
+      >
+        <div>
+          <h2 class="text-5xl text-white">
+            Great Tea. <br />In Good <br />Company.
+          </h2>
+        </div>
+
+        <div class="flex items-start gap-5 flex-col">
+          <p class="text-white font-light text-xl">
+            Discover the people, places, and purpose behind every blend.
+          </p>
+
+          <button
+            class="capitalize px-15 py-4 rounded-4xl border text-black hover:text-white hover:bg-[#2a2857]"
+          >
+            about us
+          </button>
+        </div>
+      </div>
+    </section>
+    <script src="script.js"></script>
+    <script>
+      lucide.createIcons();
+    </script>
+  </body>
+</html>
