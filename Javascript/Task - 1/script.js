@@ -681,20 +681,20 @@
 
 
 // 5. Check whether a product is in stock.
-let product = "Jockey Underwear"
-let inStock = true
+// let product = "Jockey Underwear"
+// let inStock = true
 
-if (product) {
-   if (inStock) {
-      console.log("product in stock available")
-   } else {
+// if (product) {
+//    if (inStock) {
+//       console.log("product in stock available")
+//    } else {
 
-      console.log("product not in stock available")
-   }
-} else {
+//       console.log("product not in stock available")
+//    }
+// } else {
 
-   console.log("product Not ")
-}
+//    console.log("product Not ")
+// }
 
 // 6. Calculate final bill after GST.
 // let price = 2000
@@ -709,6 +709,21 @@ if (product) {
 // ## Challenge Questions for Beginners
 
 // 1. Generate a random OTP of 4 digits.
+function otpGenerator(val){
+let otp = ""
+for(let i  = 1 ; i <= val ; i++){
+  otp += Math.floor(Math.random()*10)
+}
+// console.log(typeof(otp))
+return otp
+}
+
+
+
+console.log(otpGenerator(6))
+// otpGenerator(6)
+
+
 // 2. Reverse a 3-letter string manually.
 // 3. Find the last character of a string.
 // 4. Convert a full name into uppercase initials.
