@@ -145,14 +145,12 @@
 // console.log(isPalindrome("kaif"))
 
 
-// // Q14. Convert the first letter of every word to uppercase.
+// Q14. Convert the first letter of every word to uppercase.
 // function capitalize(str){
 // str1 = str.split(" ")
 // // console.log(str1);
 // for(let i = 0 ; i < str1.length ; i++){
-//    if(i == indexOf(0)){
-//       str1[i].toUpperCase()
-//    }
+   
 //    console.log(str1[i])
 // }
 
@@ -178,14 +176,54 @@
 
 // Q16. Find the largest number in an array.
 
+// let arr = [10,20,30,100,40,50,60]
+// let max = 0
+// for(let i = 0 ; i < arr.length ; i++){
+//    if(arr[i] > max){
+//       max = arr[i]
+//    }
+// }
+// console.log(max)
+
 
 // Q17. Find the smallest number in an array.
 
+// let arr = [10,20,30,100,40,50,60,0, -5]
+// let min = Infinity
+// for(let i = 0 ; i < arr.length ; i++){
+//    if(arr[i] < min){
+//       min = arr[i]
+//    }
+// }
+// console.log(min)
+
 // Q18. Find the sum of all array elements.
+// let arr = [10,20,30]
+// let sum = 0
+// for(let i = 0 ; i < arr.length ; i++){
+//       sum += arr[i]
+// }
+// console.log(sum)
+
 
 // Q19. Return only even numbers from an array.
+// let arr = [1,2,3,4,5,6,10]
+// // let max = 0
+// for(let i = 0 ; i < arr.length ; i++){
+//    if(arr[i] % 2 == 0){
+//       console.log("Even" , arr[i])
+//    }
+// }
+// console.log(max)
 
 // Q20. Remove duplicate values from an array.
+function removeDuplicateValues(num){
+    for(let i=0;i<num.length-1;i++)
+        if(num[i]==num[i+1])
+            num.splice(i,1);
+    return num;
+}
+console.log(removeDuplicateValues([1,2,2,3,4,4,5]));
 
 
 
