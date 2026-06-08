@@ -144,17 +144,27 @@ let students = [
   },
 ];
 
+function generateStudentReport(students) {
+return students.map((std) => {
+  let sum = std.marks.reduce((acc, val)=> acc + val ,0)
+  // console.log(sum)
+  let avg = sum / std.marks.length
 
-function generateReport(students){
-let obj = {}
-let totalMarks ;
-for(let i = 0 ; i <= students.length-1 ; i++){
-   // console.log(students[i].marks)
-   tstudents[i].marks.reduce((acc,val)=>{
-      return acc+=val
-   },0)
-}
-return totalMarks
+  let grd ;
+   if (avg >= 80) {
+      grd = "A";
+    } else if (avg >= 60) {
+      grd = "B";
+    } else {
+      grd = "C";
+    }
+
+  return {
+    studentName : std.name,
+    average : avg,
+    grade : grd
+  }
+})
 }
 
-console.log(generateReport(students))
+console.log(generateStudentReport(students));
