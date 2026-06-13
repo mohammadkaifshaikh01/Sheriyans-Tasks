@@ -133,38 +133,46 @@
 
 // Question - 12
 
-let students = [
-  {
-    name: "Ritik",
-    marks: [80, 90, 85],
-  },
-  {
-    name: "Aman",
-    marks: [50, 40, 60],
-  },
-];
+// let students = [
+//   {
+//     name: "Ritik",
+//     marks: [80, 90, 85],
+//   },
+//   {
+//     name: "Aman",
+//     marks: [50, 40, 60],
+//   },
+// ];
 
-function generateStudentReport(students) {
-return students.map((std) => {
-  let sum = std.marks.reduce((acc, val)=> acc + val ,0)
-  // console.log(sum)
-  let avg = sum / std.marks.length
+// function generateStudentReport(students) {
+// return students.map((std) => {
+//   let sum = std.marks.reduce((acc, val)=> acc + val ,0)
+//   // console.log(sum)
+//   let avg = sum / std.marks.length
 
-  let grd ;
-   if (avg >= 80) {
-      grd = "A";
-    } else if (avg >= 60) {
-      grd = "B";
-    } else {
-      grd = "C";
-    }
+//   let grd ;
+//    if (avg >= 80) {
+//       grd = "A";
+//     } else if (avg >= 60) {
+//       grd = "B";
+//     } else {
+//       grd = "C";
+//     }
 
-  return {
-    studentName : std.name,
-    average : avg,
-    grade : grd
-  }
-})
-}
+//   return {
+//     studentName : std.name,
+//     average : avg,
+//     grade : grd
+//   }
+// })
+// }
 
-console.log(generateStudentReport(students));
+// console.log(generateStudentReport(students));
+
+const user= {
+ name:"Ritik",
+ greet() {
+console.log(this.name);
+ }
+};
+user.greet();
