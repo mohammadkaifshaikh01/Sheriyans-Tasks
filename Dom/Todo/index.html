@@ -1,156 +1,167 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-   <meta charset="UTF-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>To-Do Application</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To-Do Application</title>
 
-<style>
-   * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
 
-html,
-body {
-  height: 100%;
-  width: 100%;
-  background: linear-gradient(135deg, #667eea, #764ba2);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-family: Arial, Helvetica, sans-serif;
-}
+      html,
+      body {
+        height: 100%;
+        width: 100%;
+        background: linear-gradient(135deg, #667eea, #764ba2);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: Arial, Helvetica, sans-serif;
+      }
 
-main {
-  width: 500px;
-  height: 600px;
-  background-color: white;
-  border-radius: 15px;
-  overflow: hidden;
-  padding: 25px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-}
+      main {
+        width: 500px;
+        height: 600px;
+        background-color: white;
+        border-radius: 15px;
+        overflow: hidden;
+        padding: 25px;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+      }
 
-.container {
-  display: flex;
-  gap: 10px;
-  margin-bottom: 20px;
-}
+      .container {
+        display: flex;
+        gap: 10px;
+        margin-bottom: 20px;
+      }
 
-input {
-  flex: 1;
-  padding: 12px;
-  border: 2px solid #ddd;
-  border-radius: 8px;
-  outline: none;
-  font-size: 16px;
-}
+      input {
+        flex: 1;
+        padding: 12px;
+        border: 2px solid #ddd;
+        border-radius: 8px;
+        outline: none;
+        font-size: 16px;
+      }
 
-input:focus {
-  border-color: #667eea;
-}
+      input:focus {
+        border-color: #667eea;
+      }
 
-.add {
-  padding: 12px 20px;
-  border: none;
-  border-radius: 8px;
-  background-color: #667eea;
-  color: white;
-  cursor: pointer;
-  font-size: 16px;
-  transition: 0.3s;
-}
+      .add {
+        padding: 12px 20px;
+        border: none;
+        border-radius: 8px;
+        background-color: #667eea;
+        color: white;
+        cursor: pointer;
+        font-size: 16px;
+        transition: 0.3s;
+      }
 
-.add:hover {
-  background-color: #5563d6;
-}
+      .add:hover {
+        background-color: #5563d6;
+      }
 
-.list-container {
-  display: flex;
-  flex-direction: column;
-  overflow-y: scroll;
- height: 100%;
-  gap: 10px;
- 
-}
+      .list-container {
+        display: flex;
+        flex-direction: column;
+        overflow-y: scroll;
+        height: 100%;
+        gap: 10px;
+      }
 
-/* Task Styling */
-.task {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #f4f4f4;
-  padding: 12px;
-  border-radius: 8px;
-}
+      /* Task Styling */
+      .task {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #f4f4f4;
+        padding: 12px;
+        border-radius: 8px;
+      }
 
-.task h3 {
-  font-size: 18px;
-  color: #333;
-}
+      .task h3 {
+        font-size: 18px;
+        color: #333;
+      }
 
-.btn {
-  border: none;
-  padding: 8px 14px;
-  border-radius: 6px;
-  cursor: pointer;
-  color: white;
-  margin-left: 5px;
-}
+      .btn {
+        border: none;
+        padding: 8px 14px;
+        border-radius: 6px;
+        cursor: pointer;
+        color: white;
+        margin-left: 5px;
+      }
 
-.edit {
-  background-color: #28a745;
-}
+      .edit {
+        background-color: #28a745;
+      }
 
-.edit:hover {
-  background-color: #218838;
-}
+      .edit:hover {
+        background-color: #218838;
+      }
 
-.del {
-  background-color: #dc3545;
-}
+      .del {
+        background-color: #dc3545;
+      }
 
-.del:hover {
-  background-color: #c82333;
-}
-</style>
-</head>
-<body>
-   <main>
+      .del:hover {
+        background-color: #c82333;
+      }
+    </style>
+  </head>
+
+  <body>
+    <main>
       <div class="container">
-         <input type="text" placeholder="Enter Your Task">
-         <button class="add">Add</button>
+        <input type="text" placeholder="Enter Your Task" />
+        <button class="add">Add</button>
       </div>
       <div class="list-container">
-         <!-- <h3 class="view">Task</h3>
+        <!-- <div class="card">
+
+        </div> -->
+        <!-- <h3 class="view">Task</h3>
          <button class="btn edit">Edit</button>
          <button class="btn del">Delete</button> -->
       </div>
-   </main>
-</body>
-<script>
-   let input = document.querySelector('input')
-   let button = document.querySelector('button')
-   let tasks = document.querySelector('.list-container')
+    </main>
+  </body>
+  <script>
+    let input = document.querySelector("input");
+    let button = document.querySelector(".add");
+    let tasks = document.querySelector(".list-container");
 
-   //Add Task Functionality
-   button.addEventListener('click' , function(){
-      console.log(input.value)
-      tasks.innerHTML += `
+    //Add Task Functionality
+    button.addEventListener("click", function () {
+      console.log(input.value);
+      let cards = document.createElement("div");
+      cards.className = "card";
+      cards.innerHTML += `
+
        <h3 class="view">${input.value}</h3>
          <button class="btn edit">Edit</button>
-         <button onClick="deleteTask" class="btn del">Delete</button>
-      `
-      input.value = ""
-   })
+         <button  class="btn del">Delete</button>
+      `;
 
-   //Delete Task Functionality
-   let deleteTask = ()
+       //Delete Task Functionality
+      let delButton = cards.querySelector(".del");
+      delButton.addEventListener("click", () => {
+        cards.remove();
+      });
 
+      tasks.append(cards);
+      input.value = "";
+    });
 
-   //Edit Task Functionality
    
-</script>
+
+    //Edit Task Functionality
+  </script>
 </html>
