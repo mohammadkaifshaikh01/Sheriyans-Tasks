@@ -86,11 +86,16 @@
   <body>
     <div id="top">
       <p>Timer - <span id="timer">0</span></p>
+      <p>Score - <span id="score">0</span></p>
     </div>
     <main>
       <!-- <div class="box"></div> -->
     </main>
     <button>Start</button>
+
+    <div id="overlay">
+      <h1>Game Over</h1>
+    </div>
   </body>
 
   <!-- Old Code -->
@@ -128,11 +133,15 @@
     const main = document.querySelector("main");
     const btn = document.querySelector("button");
     const timer = document.querySelector("#timer");
+    const overlay = document.querySelector('#overlay')
+    const scoreee = document.querySelector('#score')
 
     const box = document.createElement("div");
     box.classList.add("box");
+
     let time = 0;
     let interval;
+   let score = 0
 
     const randomColour = () =>{
       let R = Math.floor(Math.random() * 256)
@@ -147,11 +156,14 @@
       main.append(box)
       time += 1;
       timer.textContent = time;
-      const rY = Math.random() * 100;
-      const rX = Math.random() * 100;
 
-      box.style.top = `${rY}%`;
-      box.style.left = `${rX}%`;
+      let mainH = main.clientHeight - box.offsetHeight
+      let mainW = main.clientWidth - box.offsetWidth
+      const rY = Math.random() * mainH;
+      const rX = Math.random() * mainW;
+
+      box.style.top = `${rY}px`;
+      box.style.left = `${rX}px`;
     };
 
     btn.addEventListener("click", () => {
@@ -163,7 +175,13 @@
 
       setTimeout(() => {
         clearInterval(interval);
+        overlay.style.display = "flex"
       }, 10000);
     });
+
+    box.addEventListener('click' , ()=>{
+      score += 1
+      scoree.textContent = score
+    })
   </script>
 </html>
