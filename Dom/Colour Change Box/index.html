@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Colour Change Box</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        height: 100%;
+        width: 100%;
+        background-color: black;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      main {
+        position: relative;
+        height: 70%;
+        width: 25%;
+        border: 2px solid rgb(217, 7, 7);
+        border-radius: 10px;
+        padding: 10px;
+        background-image: url("https://upload.wikimedia.org/wikipedia/en/4/4c/GokumangaToriyama.png");
+      }
+
+      button {
+        background-color: white;
+        color: rgb(156, 78, 78);
+        border-radius: 10px;
+        padding: 10px 25px;
+        border: none;
+      }
+
+      .box {
+        position: absolute;
+        height: 10%;
+        border-radius: 10px;
+        width: 15%;
+        background-color: red;
+      }
+
+      #top {
+        color: white;
+        display: flex;
+        width: 25%;
+        justify-content: space-between;
+      }
+
+      #overlay {
+        justify-content: center;
+        align-items: center;
+        display: none;
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.827);
+        color: white;
+        font-size: 50px;
+        text-transform: uppercase;
+        font-family:
+          system-ui,
+          -apple-system,
+          BlinkMacSystemFont,
+          "Segoe UI",
+          Roboto,
+          Oxygen,
+          Ubuntu,
+          Cantarell,
+          "Open Sans",
+          "Helvetica Neue",
+          sans-serif;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="top">
+      <p>Timer - <span id="timer">0</span></p>
+    </div>
+    <main>
+      <!-- <div class="box"></div> -->
+    </main>
+    <button>Start</button>
+  </body>
+
+  <!-- Old Code -->
+  <!-- <script>
+    const main = document.querySelector("main");
+    const box = document.querySelector(".box");
+    const btn = document.querySelector("button");
+    const timer = document.querySelector("#timer");
+
+    let time = 0;
+    let interval;
+
+
+
+
+    btn.addEventListener("click", () => {
+      clearInterval(interval);
+      interval = setInterval(() => {
+        time += 1;
+        timer.textContent = time;
+        const rY = Math.random() * 100;
+        const rX = Math.random() * 100;
+
+        box.style.top = `${rY}%`;
+        box.style.left = `${rX}%`;
+      }, 1000);
+
+      setTimeout(() => {
+        clearInterval(interval);
+      }, 10000);
+    });
+  </script> -->
+
+  <script>
+    const main = document.querySelector("main");
+    const btn = document.querySelector("button");
+    const timer = document.querySelector("#timer");
+
+    const box = document.createElement("div");
+    box.classList.add("box");
+    let time = 0;
+    let interval;
+
+    const randomColour = () =>{
+      let R = Math.floor(Math.random() * 256)
+      let G = Math.floor(Math.random() * 256)
+      let B = Math.floor(Math.random() * 256)
+
+      return `rgb(${R} , ${G} , ${B}) `
+    }
+
+    const randomBox = () => {
+      box.style.backgroundColor = randomColour()
+      main.append(box)
+      time += 1;
+      timer.textContent = time;
+      const rY = Math.random() * 100;
+      const rX = Math.random() * 100;
+
+      box.style.top = `${rY}%`;
+      box.style.left = `${rX}%`;
+    };
+
+    btn.addEventListener("click", () => {
+      // randomBox()
+      clearInterval(interval);
+      interval = setInterval(() => {
+         randomBox()
+      }, 1000);
+
+      setTimeout(() => {
+        clearInterval(interval);
+      }, 10000);
+    });
+  </script>
+</html>
