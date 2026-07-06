@@ -22,6 +22,10 @@ main {
         NAVBAR
 ========================== */
 
+.logo{
+  width: 90px;
+  /* height: 70%; */
+}
 nav {
   width: 100%;
   background: linear-gradient(135deg, #2563eb, #4f46e5);
