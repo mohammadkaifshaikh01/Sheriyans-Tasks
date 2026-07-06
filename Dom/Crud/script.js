@@ -3,13 +3,15 @@ let formDiv = document.querySelector(".form");
 let closeBtn = document.querySelector("#close");
 let form = document.querySelector("form");
 let product = document.querySelector(".product");
+// let deleteButton = document.querySelector("#delete")
+let submitButton = document.querySelector("#submitButton");
 let ProductsArray = [];
 let updateIndex = null;
 
 //Showing product in ui
 let userInterFace = () => {
   product.innerHTML = "";
-  ProductsArray.forEach((elem , index) => {
+  ProductsArray.forEach((elem, index) => {
     console.log(elem);
     product.innerHTML += `
   <div class="product-card">
@@ -79,8 +81,8 @@ form.addEventListener("submit", (event) => {
   };
 
   if (updateIndex !== null) {
-    ProductsArray[updateIndex] = obj
-    updateIndex = null
+    ProductsArray[updateIndex] = obj;
+    updateIndex = null;
   } else {
     ProductsArray.push(obj);
   }
@@ -97,6 +99,7 @@ form.addEventListener("submit", (event) => {
 const updateProduct = (data) => {
   // console.log("Updating" ,data);
   formDiv.style.display = "flex";
+  submitButton.innerHTML = "Update Product";
   const updateData = ProductsArray.find((e) => e.productName === data);
   updateIndex = ProductsArray.findIndex((e) => e.productName === data);
   // console.log(updateData)
@@ -106,9 +109,8 @@ const updateProduct = (data) => {
   form[3].value = updateData.imageUrl;
 };
 
-
-const deleteProduct =  (index) => {
-  ProductsArray.splice(index , 1)
-  console.log(index)
-  userInterFace()
-}
+const deleteProduct = (index) => {
+  ProductsArray.splice(index, 1);
+  console.log(index);
+  userInterFace();
+};
