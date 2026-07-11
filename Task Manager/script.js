@@ -14,8 +14,8 @@ let userInterFace = () => {
 
       let taskCardContent = document.createElement('div')
       taskCardContent.className = "taskCard"
-      taskCardContent.setAttribute('data-id' ,elem.id)
-      taskCardContent.setAttribute('data-category' ,elem.priority)
+      taskCardContent.setAttribute('data-id', elem.id)
+      taskCardContent.setAttribute('data-category', elem.priority)
 
       let taskCardText = document.createElement('div')
       taskCardText.className = "text"
@@ -24,7 +24,14 @@ let userInterFace = () => {
       taskCardName.textContent = elem.taskName
       let taskCardPriority = document.createElement('p')
       taskCardPriority.className = elem.priority
-      taskCardPriority.textContent = elem.priority
+
+      if (elem.status === "Completed") {
+         taskCardPriority.textContent = "Completed";
+         taskCardPriority.className = "completedStatus";
+         taskCardName.classList.add("completedTask");
+      } else {
+         taskCardPriority.textContent = elem.priority
+      }
 
       taskCardText.appendChild(taskCardName)
       taskCardText.appendChild(taskCardPriority)
@@ -40,7 +47,7 @@ let userInterFace = () => {
       deleteButton.id = "delete"
       deleteButton.textContent = "Delete"
 
-      deleteButton.addEventListener('click' , () =>{
+      deleteButton.addEventListener('click', () => {
          console.log("Button Clicked")
          deleteTask(elem.id)
       })
@@ -49,7 +56,7 @@ let userInterFace = () => {
       statusButton.id = "status"
       statusButton.textContent = "Complete"
 
-      statusButton.addEventListener('click' , () =>{
+      statusButton.addEventListener('click', () => {
          completeTask(elem.id)
       })
 
@@ -87,10 +94,10 @@ form.addEventListener("submit", (event) => {
    // let id = setAttribute('id' , Date.now())
 
    let obj = {
-      id : Date.now(),
+      id: Date.now(),
       taskName,
       priority,
-      status : "Pending"
+      status: "Pending"
    };
 
    taskArray.push(obj);
@@ -104,18 +111,20 @@ form.addEventListener("submit", (event) => {
 //Delete Functionality
 const deleteTask = (elem) => {
    console.log("Funcito")
-   taskArray = taskArray.filter((e) => e.id !== elem) 
-  
-   userInterFace()  
+   taskArray = taskArray.filter((e) => e.id !== elem)
+
+   userInterFace()
 }
 
 
-const statusButton = (elem) => {
-   
+const completeTask = (elem) => {
+   const taskCo = taskArray.find((e) => e.id === elem)
+   taskCo.status = "Completed"
+   userInterFace()
 }
 
 
-
+console.log(taskArray)
 // =======================================
 // Old Ui Code
 // ======================================
