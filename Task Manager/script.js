@@ -7,6 +7,9 @@ let submitButton = document.querySelector("#submitButton");
 let formHeading = document.querySelector(".formHeading");
 let taskArray = [];
 let updateIndex = null;
+let theme = document.querySelector(".themeToggle")
+let themeCheck = false
+let navbar = document.querySelector(".navbar")
 
 // ===============================================
 //Showing Tasks In Ui
@@ -31,6 +34,11 @@ let userInterFace = () => {
       let updateButton = document.createElement("button");
       updateButton.className = "update";
       updateButton.textContent = "Update";
+
+
+      // if(themeCheck){
+      //    document.
+      // }
 
       if (elem.status === "Completed") {
          taskCardPriority.textContent = "Completed";
@@ -171,6 +179,26 @@ const completeTask = (elem) => {
    userInterFace();
 
 };
+
+
+// ===============================================
+//Change Theme
+// ================================================
+theme.addEventListener('click', () => {
+
+   if (document.body.classList.contains("dark")) {
+      document.body.classList.remove("dark")
+      // document.nav.classList.remove("darkNav")
+      navbar.classList = "navbar"
+      theme.textContent = "Dark Mode"
+   } else {
+      document.body.classList.add("dark");
+      // document.nav.classList.add("darkNav")
+      navbar.classList = "darkNav"
+      theme.textContent = "Light Mode";
+   }
+
+})
 
 // =======================================
 // Old Ui Code
