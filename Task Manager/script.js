@@ -3,86 +3,104 @@ let formClose = document.querySelector("#formClose");
 let formDiv = document.querySelector(".formDiv");
 let form = document.querySelector("form");
 let tasksCard = document.querySelector(".tasks");
+let submitButton = document.querySelector("#submitButton");
+let formHeading = document.querySelector(".formHeading");
 let taskArray = [];
+let updateIndex = null;
 
+// ===============================================
+//Showing Tasks In Ui
+// ================================================
 let userInterFace = () => {
-
    tasksCard.innerHTML = "";
    taskArray.forEach((elem) => {
       // console.log(elem);
+      let taskCardContent = document.createElement("div");
+      taskCardContent.className = "taskCard";
+      taskCardContent.setAttribute("data-id", elem.id);
+      taskCardContent.setAttribute("data-category", elem.priority);
 
+      let taskCardText = document.createElement("div");
+      taskCardText.className = "text";
 
-      let taskCardContent = document.createElement('div')
-      taskCardContent.className = "taskCard"
-      taskCardContent.setAttribute('data-id', elem.id)
-      taskCardContent.setAttribute('data-category', elem.priority)
+      let taskCardName = document.createElement("h3");
+      taskCardName.textContent = elem.taskName;
+      let taskCardPriority = document.createElement("p");
+      taskCardPriority.className = elem.priority;
 
-      let taskCardText = document.createElement('div')
-      taskCardText.className = "text"
-
-      let taskCardName = document.createElement('h3')
-      taskCardName.textContent = elem.taskName
-      let taskCardPriority = document.createElement('p')
-      taskCardPriority.className = elem.priority
+      let updateButton = document.createElement("button");
+      updateButton.className = "update";
+      updateButton.textContent = "Update";
 
       if (elem.status === "Completed") {
          taskCardPriority.textContent = "Completed";
          taskCardPriority.className = "completedStatus";
          taskCardName.classList.add("completedTask");
+         updateButton.disabled = true;
+
       } else {
-         taskCardPriority.textContent = elem.priority
+         taskCardPriority.textContent = elem.priority;
       }
 
-      taskCardText.appendChild(taskCardName)
-      taskCardText.appendChild(taskCardPriority)
+      taskCardText.appendChild(taskCardName);
+      taskCardText.appendChild(taskCardPriority);
 
-      let buttons = document.createElement('div')
-      buttons.className = "btns"
-
-      let updateButton = document.createElement('button')
-      updateButton.id = "update"
-      updateButton.textContent = "Update"
-
-      let deleteButton = document.createElement('button')
-      deleteButton.id = "delete"
-      deleteButton.textContent = "Delete"
-
-      deleteButton.addEventListener('click', () => {
-         console.log("Button Clicked")
-         deleteTask(elem.id)
-      })
-
-      let statusButton = document.createElement('button')
-      statusButton.id = "status"
-      statusButton.textContent = "Complete"
-
-      statusButton.addEventListener('click', () => {
-         completeTask(elem.id)
-      })
-
-      buttons.appendChild(updateButton)
-      buttons.appendChild(deleteButton)
-      buttons.appendChild(statusButton)
+      let buttons = document.createElement("div");
+      buttons.className = "btns";
 
 
-      taskCardContent.appendChild(taskCardText)
-      taskCardContent.appendChild(buttons)
 
-      tasksCard.append(taskCardContent)
+      updateButton.addEventListener("click", () => {
+         console.log("Button Clicked");
+         updateTask(elem.id);
+      });
 
+      let deleteButton = document.createElement("button");
+      deleteButton.className = "delete";
+      deleteButton.textContent = "Delete";
 
+      deleteButton.addEventListener("click", () => {
+         // console.log("Button Clicked")
+         deleteTask(elem.id);
+      });
+
+      let statusButton = document.createElement("button");
+      statusButton.className = "status";
+      statusButton.textContent = "Complete";
+
+      statusButton.addEventListener("click", () => {
+         completeTask(elem.id);
+
+      });
+
+      buttons.appendChild(updateButton);
+      buttons.appendChild(deleteButton);
+      buttons.appendChild(statusButton);
+
+      taskCardContent.appendChild(taskCardText);
+      taskCardContent.appendChild(buttons);
+
+      tasksCard.append(taskCardContent);
    });
 };
 
+// ===============================================
+// Form Open
+// ================================================
 formOpen.addEventListener("click", () => {
    formDiv.style.display = "flex";
 });
 
+// ===============================================
+// Form Close
+// ================================================
 formClose.addEventListener("click", () => {
    formDiv.style.display = "none";
 });
 
+// ===============================================
 // Adding Task
+// ================================================
 form.addEventListener("submit", (event) => {
    event.preventDefault();
 
@@ -93,38 +111,67 @@ form.addEventListener("submit", (event) => {
    let priority = event.target[1].value;
    // let id = setAttribute('id' , Date.now())
 
+   if (taskName.trim() === "" || priority.trim() === "") {
+      alert("All Field Are Mandotry")
+      return;
+   }
+
    let obj = {
       id: Date.now(),
       taskName,
       priority,
-      status: "Pending"
+      status: "Pending",
    };
 
-   taskArray.push(obj);
+   if (updateIndex !== null) {
+      taskArray[updateIndex] = obj;
+      updateIndex = null;
+   } else {
+      taskArray.push(obj);
+   }
+
    userInterFace();
    form.reset();
    formDiv.style.display = "none";
 });
 
-
-
+// ===============================================
 //Delete Functionality
+// ================================================
 const deleteTask = (elem) => {
-   console.log("Funcito")
-   taskArray = taskArray.filter((e) => e.id !== elem)
+   console.log("Funcito");
+   taskArray = taskArray.filter((e) => e.id !== elem);
 
-   userInterFace()
-}
+   userInterFace();
+};
 
+// ===============================================
+// Update Functionality
+// ================================================
 
+const updateTask = (id) => {
+   // console.log("End")
+   formDiv.style.display = "flex";
+   formHeading.textContent = "Update Task";
+   submitButton.textContent = "Update Task";
+   const updateData = taskArray.find((elem) => elem.id === id);
+   updateIndex = taskArray.findIndex((elem) => elem.id === id);
+   console.log(updateData);
+
+   form[0].value = updateData.taskName;
+   form[1].value = updateData.priority;
+};
+
+// ===============================================
+//Complete Task
+// ================================================
 const completeTask = (elem) => {
-   const taskCo = taskArray.find((e) => e.id === elem)
-   taskCo.status = "Completed"
-   userInterFace()
-}
+   const taskCo = taskArray.find((e) => e.id === elem);
+   taskCo.status = "Completed";
+   userInterFace();
 
+};
 
-console.log(taskArray)
 // =======================================
 // Old Ui Code
 // ======================================
@@ -133,7 +180,6 @@ console.log(taskArray)
 //    tasksCard.innerHTML = "";
 //    taskArray.forEach((elem) => {
 //       console.log(elem);
-
 
 //       let taskCard = document.createElement('div')
 //       taskCard.className = "taskCard"

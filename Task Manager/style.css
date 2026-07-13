@@ -216,26 +216,31 @@ nav button:hover {
   transition: 0.3s;
 }
 
-#update {
+.update {
   background: #f59e0b;
 }
 
-#update:hover {
+.update:hover {
   background: #d97706;
 }
 
-#delete {
+.update:disabled{
+  cursor: not-allowed;
+  opacity: 0.2;
+}
+
+.delete {
   background: #ef4444;
 }
 
-#delete:hover {
+.delete:hover {
   background: #dc2626;
 }
-#status {
+.status {
   background: #88ef44;
 }
 
-#status:hover {
+.status:hover {
   background: #dc2626;
 }
 
