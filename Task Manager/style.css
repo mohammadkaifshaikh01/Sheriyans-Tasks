@@ -26,7 +26,7 @@ main {
         NAVBAR
 ========================== */
 
-.logo{
+.logo {
   width: 90px;
   /* height: 70%; */
 }
@@ -60,7 +60,6 @@ main {
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
 }
 
-
 .navbar button {
   padding: 12px 22px;
   border: none;
@@ -93,8 +92,6 @@ main {
   transition: 0.3s;
 }
 
-
-
 .navbar button:hover {
   transform: translateY(-3px);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
@@ -111,8 +108,14 @@ main {
 
 .tasks {
   margin-top: 35px;
-
+  /* width: 350px;
+  height: 200px; */
+  /* border: #d97706 1px solid; */
+  border-radius: 20px;
   display: grid;
+  /* background-color: #6f7d74; */
+
+  justify-content: space-around;
 
   grid-template-columns: repeat(5, 1fr);
 
@@ -124,9 +127,29 @@ main {
 ========================== */
 
 .tasks-card {
-  background: white;
+  background: rgb(228, 222, 222);
 
   border-radius: 18px;
+  
+  border: #282424 1px solid;
+
+  overflow: hidden;
+
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+
+  transition: 0.35s;
+
+  display: flex;
+
+  flex-direction: column;
+}
+
+.tasks-card-dark {
+  background: rgb(33, 2, 2);
+
+  border-radius: 18px;
+  
+  border: #fdfcfc 1px solid;
 
   overflow: hidden;
 
@@ -145,11 +168,18 @@ main {
   box-shadow: 0 18px 35px rgba(0, 0, 0, 0.18);
 }
 
+.tasks-card-dark:hover {
+  transform: translateY(-8px);
+
+  box-shadow: 0 18px 35px rgba(0, 0, 0, 0.18);
+}
+
+
 /* ==========================
       IMAGE
 ========================== */
 
-.img {
+/* .img {
   width: 100%;
   height: 200px;
   padding: 12px;
@@ -159,9 +189,9 @@ main {
   width: 100%;
   height: 100%;
   /* padding: 10px; */
-  border-radius: 10px;
-  object-fit: cover;
-}
+  /* border-radius: 10px;
+  object-fit: cover; */
+/* }  */
 
 /* ==========================
       TEXT
@@ -171,46 +201,55 @@ main {
   padding: 0px 15px;
 }
 
+.textDark {
+  padding: 0px 15px;
+}
+
 .text h3 {
   font-size: 24px;
   margin-bottom: 12px;
-  color: #222;
+  color: #000000;
 }
 
- /* .text p {
+.textDark h3 {
+  font-size: 24px;
+  margin-bottom: 12px;
+  color: #ffffff;
+}
+
+/* .text p {
   margin-top: 5px;
   color: #666;
   line-height: 1.5;
 } */
 
-
-.task p{
-    display: inline-block;
-    padding: 6px 14px;
-    border-radius: 20px;
-    font-weight: 600;
-    text-transform: capitalize;
+.task p {
+  display: inline-block;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-weight: 600;
+  text-transform: capitalize;
 }
 
-.High{
-    /* background: #fee2e2; */
-    color: #dc2626;
-    font-size: 25px;
-    font-weight: 900;
+.High {
+  /* background: #fee2e2; */
+  color: #dc2626;
+  font-size: 25px;
+  font-weight: 900;
 }
 
-.Medium{
-    /* background: #fef3c7; */
-    color: #d97706;
-    font-size: 25px;
-    font-weight: 900;
+.Medium {
+  /* background: #fef3c7; */
+  color: #d97706;
+  font-size: 25px;
+  font-weight: 900;
 }
 
-.Low{
-    /* background: #dcfce7; */
-    color: #16a34a;
-    font-size: 25px;
-    font-weight: 900;
+.Low {
+  /* background: #dcfce7; */
+  color: #16a34a;
+  font-size: 25px;
+  font-weight: 900;
 }
 /* .text p:last-child {
   margin-top: 5px;
@@ -261,7 +300,7 @@ main {
   background: #d97706;
 }
 
-.update:disabled{
+.update:disabled {
   cursor: not-allowed;
   opacity: 0.2;
 }
@@ -281,16 +320,16 @@ main {
   background: #dc2626;
 }
 
-.completedTask{
-    text-decoration: line-through;
-    opacity: .7;
+.completedTask {
+  text-decoration: line-through;
+  opacity: 0.7;
 }
 
-.completedStatus{
-    background: green;
-    color: white;
-    padding: 5px 12px;
-    border-radius: 20px;
+.completedStatus {
+  background: green;
+  color: white;
+  padding: 5px 12px;
+  border-radius: 20px;
 }
 
 /* ==========================
@@ -369,6 +408,24 @@ form {
   box-shadow: 0 20px 45px rgba(0, 0, 0, 0.2);
 }
 
+.formDark {
+  width: 450px;
+
+  background: rgb(50, 48, 48);
+
+  border-radius: 18px;
+
+  padding: 35px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 18px;
+
+  box-shadow: 0 20px 45px rgba(255, 255, 255, 0.269);
+}
+
 form h1 {
   text-align: center;
 
@@ -423,30 +480,26 @@ form button:hover {
   box-shadow: 0 8px 20px rgba(37, 99, 235, 0.35);
 }
 
+form select {
+  width: 100%;
 
-form select{
+  padding: 14px;
 
-    width:100%;
+  border: 1px solid #ddd;
 
-    padding:14px;
+  border-radius: 10px;
 
-    border:1px solid #ddd;
+  outline: none;
 
-    border-radius:10px;
+  font-size: 15px;
 
-    outline:none;
-
-    font-size:15px;
-
-    transition:.3s;
+  transition: 0.3s;
 }
 
+form select:focus {
+  border-color: #4f46e5;
 
-form select:focus{
-
-    border-color:#4f46e5;
-
-    box-shadow:0 0 0 4px rgba(79,70,229,.12);
+  box-shadow: 0 0 0 4px rgba(79, 70, 229, 0.12);
 }
 
 /* ==========================

@@ -1,7 +1,7 @@
 let formOpen = document.querySelector("#formOpen");
 let formClose = document.querySelector("#formClose");
 let formDiv = document.querySelector(".formDiv");
-let form = document.querySelector("form");
+let form = document.querySelector(".form");
 let tasksCard = document.querySelector(".tasks");
 let submitButton = document.querySelector("#submitButton");
 let formHeading = document.querySelector(".formHeading");
@@ -19,7 +19,7 @@ let userInterFace = () => {
    taskArray.forEach((elem) => {
       // console.log(elem);
       let taskCardContent = document.createElement("div");
-      taskCardContent.className = "taskCard";
+      taskCardContent.className = "tasks-card";
       taskCardContent.setAttribute("data-id", elem.id);
       taskCardContent.setAttribute("data-category", elem.priority);
 
@@ -36,9 +36,14 @@ let userInterFace = () => {
       updateButton.textContent = "Update";
 
 
-      // if(themeCheck){
-      //    document.
-      // }
+      if(themeCheck){
+         taskCardContent.className = "tasks-card-dark"
+         taskCardText.className = "textDark"
+         console.log("Dark")
+      }else{
+         taskCardContent.className = "tasks-card"
+         taskCardText.className = "text"
+      }
 
       if (elem.status === "Completed") {
          taskCardPriority.textContent = "Completed";
@@ -188,14 +193,18 @@ theme.addEventListener('click', () => {
 
    if (document.body.classList.contains("dark")) {
       document.body.classList.remove("dark")
-      // document.nav.classList.remove("darkNav")
+      form.classList = "form"
       navbar.classList = "navbar"
       theme.textContent = "Dark Mode"
+      themeCheck = false
+      userInterFace()
    } else {
       document.body.classList.add("dark");
-      // document.nav.classList.add("darkNav")
       navbar.classList = "darkNav"
+      form.classList = "formDark"
       theme.textContent = "Light Mode";
+      themeCheck = true
+      userInterFace()
    }
 
 })
