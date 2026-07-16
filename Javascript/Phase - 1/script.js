@@ -719,7 +719,7 @@ return otp
 }
 
 
-
+  
 console.log(otpGenerator(6))
 // otpGenerator(6)
 
@@ -746,3 +746,7 @@ console.log(otpGenerator(6))
 // if (verify) {
 //   console.log("You Will Be A Developer", uName);
 // }
+
+
+
+
