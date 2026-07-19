@@ -5,7 +5,9 @@ let formClose = document.querySelector(".formClose");
 let form = document.querySelector("form");
 let notes = document.querySelector(".notes");
 let submitButton = document.querySelector(".submitButton");
-let notesArray = (JSON.parse(localStorage.getItem("notes"))) || [];
+let notesArray = JSON.parse(localStorage.getItem("notes")) || [];
+let searchInput = document.querySelector(".searchInput");
+let searchButton = document.querySelector(".searchButton");
 let isUpdate = null;
 
 // Form Open Functionality
@@ -42,7 +44,6 @@ form.addEventListener("submit", (event) => {
     createdAt: new Date().toLocaleString(),
   };
 
-
   if (isUpdate !== null) {
     notesArray[isUpdate] = obj; // Updating Data In Notes Array
     localStorage.setItem("notes", JSON.stringify(notesArray)); // Setting Notes Array In Local Storage
@@ -50,7 +51,7 @@ form.addEventListener("submit", (event) => {
     isUpdate = null;
   } else {
     // Adding Data In Notes Array
-    notesArray.push(obj)
+    notesArray.push(obj);
     // Setting Notes Array In Local Storage
     localStorage.setItem("notes", JSON.stringify(notesArray));
     //stringify() converts object to string
@@ -63,10 +64,13 @@ form.addEventListener("submit", (event) => {
 });
 
 //Showing Data In Ui
-let userInterFace = () => {
+let userInterFace = (data = notesArray) => {
   notes.innerHTML = "";
-  notesArray.forEach((elem) => {
-    console.log(elem);
+  data.forEach((elem) => {
+    if (data.length === 0) {
+      notes.innerHTML = "<h2>No Notes Found</h2>";
+      return;
+    }
     notes.innerHTML += ` <div class="note">
             <div class="note-part-one">
                <h1>${elem.noteName}</h1>
@@ -80,7 +84,7 @@ let userInterFace = () => {
          </div>`;
   });
 };
-userInterFace()
+userInterFace();
 
 //Update Functionality
 let updateNote = (elem) => {
@@ -96,6 +100,23 @@ let updateNote = (elem) => {
 //Delete Functionality
 let deleteNote = (elem) => {
   notesArray = notesArray.filter((e) => e.id !== elem);
-  localStorage.setItem("notes" , JSON.stringify(notesArray))
+  localStorage.setItem("notes", JSON.stringify(notesArray));
   userInterFace();
 };
+
+//Search Functionality
+searchButton.addEventListener("click", () => {
+  let value = searchInput.value.toLowerCase();
+
+  if (value === "") {
+    userInterFace()
+    return;
+  }
+
+  let filteredNotes = notesArray.filter((elem) =>
+    elem.noteName.toLowerCase().includes(value),
+  );
+  userInterFace(filteredNotes);
+  // console.log(value)
+});
+
