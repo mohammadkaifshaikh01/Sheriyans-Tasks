@@ -66,11 +66,11 @@ form.addEventListener("submit", (event) => {
 //Showing Data In Ui
 let userInterFace = (data = notesArray) => {
   notes.innerHTML = "";
+  if (data.length === 0) {
+    notes.innerHTML = "<h2>No Notes Found</h2>";
+    return;
+  }
   data.forEach((elem) => {
-    if (data.length === 0) {
-      notes.innerHTML = "<h2>No Notes Found</h2>";
-      return;
-    }
     notes.innerHTML += ` <div class="note">
             <div class="note-part-one">
                <h1>${elem.noteName}</h1>
@@ -109,7 +109,7 @@ searchButton.addEventListener("click", () => {
   let value = searchInput.value.toLowerCase();
 
   if (value === "") {
-    userInterFace()
+    userInterFace();
     return;
   }
 
@@ -119,4 +119,3 @@ searchButton.addEventListener("click", () => {
   userInterFace(filteredNotes);
   // console.log(value)
 });
-
