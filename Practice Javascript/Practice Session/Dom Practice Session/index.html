@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dom Practice Session</title>
+  <style>
+/* Form Container */
+
+.form-container{
+    width:90%;
+    max-width:700px;
+    margin:40px auto;
+
+    display:flex;
+    gap:15px;
+    align-items:center;
+}
+
+/* Inputs */
+
+.form-container input{
+    flex:1;
+    padding:14px 18px;
+
+    border:2px solid #e5e7eb;
+    border-radius:10px;
+
+    font-size:16px;
+    outline:none;
+
+    transition:.3s;
+}
+
+.form-container input:focus{
+    border-color:#0077ff;
+    box-shadow:0 0 8px rgba(0,119,255,.2);
+}
+
+/* Button */
+
+.add{
+    padding:14px 24px;
+
+    border:none;
+    border-radius:10px;
+
+    background:#0077ff;
+    color:white;
+
+    font-size:16px;
+    font-weight:600;
+
+    cursor:pointer;
+    transition:.3s;
+}
+
+.add:hover{
+    background:#005fcc;
+    transform:translateY(-2px);
+}
+
+.add:active{
+    transform:scale(.97);
+}
+
+/* Mobile */
+
+@media(max-width:600px){
+
+    .form-container{
+        flex-direction:column;
+    }
+
+    .form-container input,
+    .add{
+        width:100%;
+    }
+
+}
+    #students {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.student-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 18px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  transition: 0.3s;
+}
+
+.student-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15);
+}
+
+.student-name {
+  font-size: 20px;
+  color: #222;
+  margin-bottom: 6px;
+}
+
+.student-course {
+  color: #666;
+  font-size: 15px;
+}
+
+.delete-btn {
+  background: #e63946;
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 15px;
+  transition: 0.3s;
+}
+
+.delete-btn:hover {
+  background: #c1121f;
+}
+
+#totalStudents {
+  color: #0077ff;
+  font-weight: bold;
+}
+  </style>
+</head>
+
+<body>
+  <!-- Question 1 -->
+  <!-- <h1 id="title">Welcome</h1> -->
+
+  <!-- Question 2 -->
+  <!-- <button id="btn">Change Color</button> -->
+
+  <!-- Question 3 -->
+  <!-- <input type="text" id="username">
+   <button>Show</button>
+   <p id="output"></p>
+   <script src="script.js"></script> -->
+
+  <!-- Question 4 -->
+  <!-- <p id="message">Hello World</p>
+   <button class="btn">Toggle</button> -->
+
+  <!-- Question 5 -->
+  <!-- <ul id="list">
+      <li>Apple</li>
+   </ul>
+   <button>Add Fruit</button> -->
+
+  <!-- Question 6 — Remove a Card -->
+  <!-- <div class="card">
+      <h2>JavaScript</h2>
+      <button>Delete</button>
+   </div> -->
+
+  <!-- Question 7 — Counter App -->
+
+  <!-- <h1 class="h">0</h1>
+   <button class="inc">+</button>
+   <button class="dec">-</button> -->
+
+  <!-- Question 8 — Live Character Counter -->
+  <!-- 
+    <textarea></textarea>
+    <p>Characters: 0</p> -->
+
+  <!-- Question 9 — Todo List -->
+
+  <!-- <input type="text" placeholder="Enter Your Task">
+   <button>Add</button>
+   <ul>All Task</ul> -->
+
+  <!-- Question 10 — Image Gallery -->
+  <!-- <img id="image" />
+    <button>Next</button> -->
+
+  <!-- Question 11 — Dark Mode Toggle -->
+  <!-- <div class="box">
+      <div>
+        <h2 class="text">Hey Kaif Shaikh</h2>
+      </div>
+      <div><button class="btn">🌙 Dark Mode</button></div>
+    </div> -->
+
+
+  <!-- Question 12 — Mini Student Manager (Interview Level) -->
+ <div class="form-container">
+    <input placeholder="Name" class="name">
+    <input placeholder="Course" class="course">
+    <button class="add">Add Student</button>
+</div>
+
+  <div id="students"></div>
+  <div>
+  <h2>Total Students: <span id="totalStudents">0</span></h2>
+</div>
+</body>
+<script src="script.js"></script>
+
+</html>
