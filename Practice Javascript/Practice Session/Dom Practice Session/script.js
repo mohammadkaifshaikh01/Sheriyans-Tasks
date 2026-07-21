@@ -117,7 +117,6 @@
 //   img.src = images[index];
 // });
 
-
 // Question 11 — Dark Mode Toggle
 // let box = document.querySelector('.box')
 // let button = document.querySelector('.btn')
@@ -138,42 +137,40 @@
 // })
 
 // Question 12 — Mini Student Manager (Interview Level)
-let studentArray = []
-let name = document.querySelector('.name')
-let course = document.querySelector('.course')
-let add = document.querySelector('.add')
-let students = document.querySelector('#students')
+let studentArray = [];
+let name = document.querySelector(".name");
+let course = document.querySelector(".course");
+let add = document.querySelector(".add");
+let students = document.querySelector("#students");
 let totalStudents = document.querySelector("#totalStudents");
 
+add.addEventListener("click", () => {
+  let studentName = name.value;
+  let courseName = course.value;
 
-add.addEventListener('click' , () => {
-  let studentName = name.value
-  let courseName = course.value
-
-  if(studentName.trim() === "" || courseName.trim() ===""){
-    alert("All Fields Are Mandotry")
-    return 
+  if (studentName.trim() === "" || courseName.trim() === "") {
+    alert("All Fields Are Mandotry");
+    return;
   }
 
   let obj = {
     studentName,
-    courseName
-  }
-  
-  studentArray.push(obj)
-  name.value = ""
-  course.value = ""
-  
-  userInterFace()
+    courseName,
+  };
+
+  studentArray.push(obj);
+  name.value = "";
+  course.value = "";
+
+  userInterFace();
 
   // console.log(obj)
   // console.log(studentName)
   // console.log(courseName)
-})
+});
 
-
-let userInterFace = () =>{
-  students.innerHTML = ""
+let userInterFace = () => {
+  students.innerHTML = "";
   studentArray.forEach((elem, index) => {
     students.innerHTML += `
      <div class="student-card">
@@ -184,13 +181,12 @@ let userInterFace = () =>{
 
     <button onClick="deleteButton(${index})" class="delete-btn">Delete</button>
   </div>
-    `
-    totalStudents.innerHTML = studentArray.length
+    `;
+    totalStudents.innerHTML = studentArray.length;
+  });
+};
 
-  })
-}
-
-const deleteButton = (ind) =>{
-studentArray.splice(ind , 1)
-userInterFace()
-}
+const deleteButton = (ind) => {
+  studentArray.splice(ind, 1);
+  userInterFace();
+};
