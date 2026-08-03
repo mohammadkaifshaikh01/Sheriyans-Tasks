@@ -35,7 +35,7 @@ const Form = () => {
     };
 
     setProducts(obj)
-  };
+  };  
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-100 px-4">
@@ -81,7 +81,7 @@ const Form = () => {
 
           <input
             ref={(event) => (formRef.current.imageRef = event)}
-            type="text"
+            type="url"
             placeholder="Image URL"
             className="w-full px-4 py-3 border border-gray-300 rounded-lg outline-none focus:ring-2 focus:ring-blue-500"
           />
