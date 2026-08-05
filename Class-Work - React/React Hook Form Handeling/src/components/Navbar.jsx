@@ -1,4 +1,5 @@
-const Navbar = ({setFormToggle}) => {
+const Navbar = ({setFormToggle, setUpdateUserCard}) => {
+  setUpdateUserCard(null)
   return (
     <nav className="h-20 bg-blue-50 shadow-md px-10 flex items-center justify-between">
       {/* Logo */}

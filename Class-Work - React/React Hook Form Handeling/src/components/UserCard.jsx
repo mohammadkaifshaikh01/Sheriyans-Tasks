@@ -1,13 +1,13 @@
 import { useState } from "react";
 
-const UserCard = ({ users }) => {
-const [profileId, setProfileId] = useState(null);
+const UserCard = ({ users, deleteCard, setFormToggle, setUpdateUserCard }) => {
+  const [profileId, setProfileId] = useState(null);
 
   return (
     <div className="flex flex-wrap gap-6">
-      {users.map((elem,index) => (
+      {users.map((elem, index) => (
         <div
-          key={elem.id}
+          key={index}
           className="bg-white rounded-2xl shadow-lg p-6 w-80 hover:shadow-xl transition"
         >
           <div className="flex flex-col items-center">
@@ -24,8 +24,10 @@ const [profileId, setProfileId] = useState(null);
             {/* Show details only when profile is true */}
             {profileId === index && (
               <div className="w-full mt-5 space-y-3">
-               <div className="flex justify-between border-b pb-2">
-                  <span className="font-semibold text-slate-600">Employee Id</span>
+                <div className="flex justify-between border-b pb-2">
+                  <span className="font-semibold text-slate-600">
+                    Employee Id
+                  </span>
                   <span className="text-sm break-all">{elem.idNumber}</span>
                 </div>
                 <div className="flex justify-between border-b pb-2">
@@ -53,6 +55,24 @@ const [profileId, setProfileId] = useState(null);
             >
               {profileId === index ? "Close" : "View Profile"}
             </button>
+
+            <div className="flex w-2xs gap-2">
+              <button
+                onClick={() => deleteCard(index)}
+                className="mt-6 w-full bg-red-600 text-white py-2 rounded-lg hover:bg-red-700 transition cursor-pointer"
+              >
+                Delete
+              </button>
+              <button
+                onClick={() => {
+                  setUpdateUserCard(elem);
+                  setFormToggle((prev) => !prev);
+                }}
+                className="mt-6 w-full bg-green-600 text-white py-2 rounded-lg hover:bg-green-700 transition cursor-pointer"
+              >
+                Update
+              </button>
+            </div>
           </div>
         </div>
       ))}

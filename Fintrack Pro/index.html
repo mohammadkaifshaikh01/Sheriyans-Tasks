@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FinTrack Pro</title>
+
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
+  </head>
+  <body>
+    <main>
+      <div class="logo">
+        <h1 class="logoH"><i class="fa-solid fa-wallet"></i> FinTrack Pro</h1>
+        <p>Track Your Income & Expenses Easily</p>
+      </div>
+      <!-- ================= Register Page ================= -->
+      <div id="registerPage" class="page">
+        <div class="card">
+          <h2>Create Account</h2>
+
+          <form id="registerForm">
+            <label for="registerUsername">Username</label>
+            <input
+              type="text"
+              id="registerUsername"
+              placeholder="Enter Your Username"
+            />
+
+            <label for="registerPassword">Password</label>
+            <input
+              type="password"
+              id="registerPassword"
+              placeholder="Enter Your Password"
+            />
+
+            <button id="registerBtn" type="submit">Register</button>
+
+            <p>
+              Already have an account?
+
+              <button id="showLogin" type="button">Login Here</button>
+            </p>
+          </form>
+        </div>
+      </div>
+
+      <!-- ================= Login Page ================= -->
+      <div id="loginPage" class="page">
+        <div class="card">
+          <h2>Welcome Back</h2>
+          <form>
+            <label for="loginUsername">Username</label>
+            <input
+              type="text"
+              id="loginUsername"
+              placeholder="Enter Your Username"
+            />
+
+            <label for="loginPassword">Password</label>
+            <input
+              type="password"
+              id="loginPassword"
+              placeholder="Enter Your Password"
+            />
+
+            <button id="loginBtn" type="submit">Login</button>
+
+            <p>
+              Don't have an account?
+
+              <button id="showRegister" type="button">Register Here</button>
+            </p>
+          </form>
+        </div>
+      </div>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>

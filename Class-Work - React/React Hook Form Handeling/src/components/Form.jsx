@@ -1,5 +1,6 @@
 import { useForm } from "react-hook-form";
-const Form = ({ setFormToggle, setUsers }) => {
+import { nanoid } from "nanoid";
+const Form = ({ setFormToggle, setUsers, users, updatedUserCard ,setUpdateUserCard}) => {
   const {
     register,
     handleSubmit,
@@ -7,13 +8,24 @@ const Form = ({ setFormToggle, setUsers }) => {
     formState: { errors },
   } = useForm({
     mode: "onChange",
+    defaultValues: updatedUserCard,
   });
 
-  // console.log(errors)
+
 
   const formSubmit = (usersData) => {
-    // console.log(e)
-    setUsers((prev) => [...prev, usersData]);
+    if (updatedUserCard) {
+      setUsers((prev) => {
+        return prev.map((elem) => {
+          return elem.id === updatedUserCard.id ? { ...usersData } : elem;
+        });
+      });
+      setUpdateUserCard(null)
+    } else {
+      let array = [...users, { ...usersData, id: nanoid() }]; // Taking Syncronous Data In Variable Array
+      setUsers(array);
+      localStorage.setItem("users", JSON.stringify(array));
+    }
     reset();
     setFormToggle((prev) => !prev);
   };
@@ -56,10 +68,10 @@ const Form = ({ setFormToggle, setUsers }) => {
             <input
               {...register("name", {
                 required: "Name Is Required",
-                pattern: {
-                  value: /^\S+$/,
-                  message: "Blank Spaces are not allowed",
-                },
+                // pattern: {
+                //   value: /^\S+$/,
+                //   message: "Blank Spaces are not allowed",
+                // },
               })}
               type="text"
               placeholder="Enter Name"
@@ -107,16 +119,16 @@ const Form = ({ setFormToggle, setUsers }) => {
             <input
               {...register("password", {
                 required: "Password Is Required",
-                pattern: {
-                  value:
-                    /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/,
-                  message:
-                    "uppercase letter, a lowercase letter, a number, and a special character.",
-                },
-                minLength: {
-                  value: 8,
-                  message: "Password Must Be 8 Character Long",
-                },
+                // pattern: {
+                //   value:
+                //     /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/,
+                //   message:
+                //     "uppercase letter, a lowercase letter, a number, and a special character.",
+                // },
+                // minLength: {
+                //   value: 8,
+                //   message: "Password Must Be 8 Character Long",
+                // },
               })}
               type="password"
               placeholder="Enter Password"
@@ -148,7 +160,7 @@ const Form = ({ setFormToggle, setUsers }) => {
             type="submit"
             className="w-full bg-blue-600 text-white py-3 rounded-lg font-semibold hover:bg-blue-700 transition"
           >
-            Submit Profile
+            {updatedUserCard ? "Update Profile" : "Submit Profile"}
           </button>
         </form>
       </div>
