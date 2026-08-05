@@ -5,7 +5,11 @@ const Form = ({ setFormToggle, setUsers }) => {
     handleSubmit,
     reset,
     formState: { errors },
-  } = useForm();
+  } = useForm({
+    mode: "onChange",
+  });
+
+  // console.log(errors)
 
   const formSubmit = (usersData) => {
     // console.log(e)
@@ -37,11 +41,12 @@ const Form = ({ setFormToggle, setUsers }) => {
               Profile Image
             </label>
             <input
-              {...register("image")}
+              {...register("image", { required: "Image Is Required" })}
               type="url"
               placeholder="Enter URL of your image"
               className="w-full border border-slate-300 rounded-lg px-4 py-3 outline-none focus:ring-2 focus:ring-blue-500"
             />
+            <p>{errors.image ? errors.image.message : ""}</p>
           </div>
 
           <div>
@@ -49,11 +54,18 @@ const Form = ({ setFormToggle, setUsers }) => {
               Name
             </label>
             <input
-              {...register("name")}
+              {...register("name", {
+                required: "Name Is Required",
+                pattern: {
+                  value: /^\S+$/,
+                  message: "Blank Spaces are not allowed",
+                },
+              })}
               type="text"
               placeholder="Enter Name"
               className="w-full border border-slate-300 rounded-lg px-4 py-3 outline-none focus:ring-2 focus:ring-blue-500"
             />
+            <p>{errors.name ? errors.name.message : ""}</p>
           </div>
 
           <div>
@@ -61,11 +73,18 @@ const Form = ({ setFormToggle, setUsers }) => {
               Gmail
             </label>
             <input
-              {...register("gmail")}
+              {...register("gmail", {
+                required: "Email Is Required",
+                pattern: {
+                  value: /^[a-zA-Z0-9._%+-]+@gmail\.com$/,
+                  message: "Enter A Valid Email Address",
+                },
+              })}
               type="email"
               placeholder="Enter Gmail"
               className="w-full border border-slate-300 rounded-lg px-4 py-3 outline-none focus:ring-2 focus:ring-blue-500"
             />
+            <p>{errors.gmail ? errors.gmail.message : ""}</p>
           </div>
 
           <div>
@@ -74,10 +93,11 @@ const Form = ({ setFormToggle, setUsers }) => {
             </label>
             <input
               type="number"
-              {...register("idNumber")}
+              {...register("idNumber", { required: "ID Is Required" })}
               placeholder="Enter Employee ID"
               className="w-full border border-slate-300 rounded-lg px-4 py-3 outline-none focus:ring-2 focus:ring-blue-500"
             />
+            <p>{errors.idNumber ? errors.idNumber.message : ""}</p>
           </div>
 
           <div>
@@ -85,11 +105,24 @@ const Form = ({ setFormToggle, setUsers }) => {
               Password
             </label>
             <input
-              {...register("password")}
+              {...register("password", {
+                required: "Password Is Required",
+                pattern: {
+                  value:
+                    /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/,
+                  message:
+                    "uppercase letter, a lowercase letter, a number, and a special character.",
+                },
+                minLength: {
+                  value: 8,
+                  message: "Password Must Be 8 Character Long",
+                },
+              })}
               type="password"
               placeholder="Enter Password"
               className="w-full border border-slate-300 rounded-lg px-4 py-3 outline-none focus:ring-2 focus:ring-blue-500"
             />
+            <p>{errors.password ? errors.password.message : ""}</p>
           </div>
 
           <div>
@@ -97,15 +130,18 @@ const Form = ({ setFormToggle, setUsers }) => {
               Department
             </label>
             <select
-              {...register("department")}
+              {...register("department", {
+                required: "Department Is Required",
+              })}
               className="w-full border border-slate-300 rounded-lg px-4 py-3 outline-none focus:ring-2 focus:ring-blue-500"
             >
-              <option>Development</option>
-              <option>HR</option>
-              <option>Accounts</option>
-              <option>Sales</option>
-              <option>Marketing</option>
+              <option value="Development">Development</option>
+              <option value="HR">HR</option>
+              <option value="Accounts">Accounts</option>
+              <option value="Sales">Sales</option>
+              <option value="Marketing">Marketing</option>
             </select>
+            <p>{errors.department ? errors.department.message : ""}</p>
           </div>
 
           <button
