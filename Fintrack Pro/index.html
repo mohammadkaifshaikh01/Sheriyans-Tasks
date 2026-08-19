@@ -12,7 +12,7 @@
     />
   </head>
   <body>
-    <main>
+    <main class="firstSection">
       <div class="logo">
         <h1 class="logoH"><i class="fa-solid fa-wallet"></i> FinTrack Pro</h1>
         <p>Track Your Income & Expenses Easily</p>
@@ -52,7 +52,7 @@
       <div id="loginPage" class="page">
         <div class="card">
           <h2>Welcome Back</h2>
-          <form>
+          <form id="loginForm">
             <label for="loginUsername">Username</label>
             <input
               type="text"
@@ -78,6 +78,42 @@
         </div>
       </div>
     </main>
+
+    <main class="secondSection">
+
+  <aside class="asideBar">
+
+    <div class="asideFirstPart">
+      <div>
+        <h1>FinTrack</h1>
+      </div>
+
+      <button class="dashboardButton">Dashboard</button>
+      <button class="dashboardButton">Settings</button>
+    </div>
+
+    <div class="asideSecondPart">
+      <button>Add Transaction</button>
+    </div>
+
+  </aside>
+
+
+  <div class="container">
+
+    <nav>
+      <p>Kaif</p>
+      <button>Logout</button>
+    </nav>
+
+    <div class="financialOverview">
+      <!-- Your grid cards -->
+       Financial Overview
+    </div>
+
+  </div>
+
+</main>
 
     <script src="script.js"></script>
   </body>

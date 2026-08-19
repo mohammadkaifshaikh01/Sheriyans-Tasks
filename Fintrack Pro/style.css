@@ -16,13 +16,18 @@ body {
   background: linear-gradient(135deg, #333257, #06b6d4);
 }
 
-main {
+.firstSection {
   width: 100%;
   max-width: 400px;
+  /* display: flex;
+  flex-direction: column; */
 }
 
 .logo {
     text-align: center;
+    /* None Kara Hai */
+    display: none; 
+    flex-direction: column;
     margin-bottom: 25px;
     background: linear-gradient(135deg, #e58646, #06b6d4);
     padding: 20px;
@@ -45,7 +50,7 @@ main {
   padding: 35px;
   border-radius: 15px;
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
-  display: flex;
+  display: none;
 }
 #loginPage {
   background: #fff;
@@ -156,3 +161,193 @@ h1 span:hover {
     text-decoration: underline;
     cursor: pointer;
 }
+
+
+/* Second Main section */
+.secondSection {
+  position: absolute;
+  width: 100%;
+  min-height: 100vh;
+  background-color: #afc0d1;
+}
+
+/* Sidebar */
+.asideBar {
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  width: 19%;
+  height: 100vh;
+
+  background-color: #ffffff;
+  border-right: 1px solid #e5e7eb;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  padding: 35px 25px;
+}
+
+/* Sidebar top section */
+.asideFirstPart {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Logo */
+.asideFirstPart h1 {
+  font-size: 28px;
+  font-weight: 700;
+  color: #2563eb;
+  margin-bottom: 20px;
+}
+
+/* Dashboard + Settings */
+.dashboardButton {
+  width: 100%;
+  border: none;
+  background: transparent;
+
+  text-align: left;
+  padding: 13px 15px;
+
+  border-radius: 8px;
+
+  font-size: 15px;
+  font-weight: 500;
+  color: #4b5563;
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+.dashboardButton:hover {
+  background-color: #eff6ff;
+  color: #2563eb;
+}
+
+/* Add Transaction */
+.asideSecondPart button {
+  width: 100%;
+
+  border: none;
+  border-radius: 8px;
+
+  padding: 13px 15px;
+
+  background-color: #2563eb;
+  color: white;
+
+  font-size: 15px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+.asideSecondPart button:hover {
+  background-color: #1d4ed8;
+}
+
+
+/* Main container */
+.container {
+  width: 100%;
+  /* margin-left: 20%; */
+
+
+}
+
+
+/* Top Navbar */
+.container nav {
+  height: 70px;
+
+  /* background-color: #ffffff; */
+  border-bottom: 1px solid #e5e7eb;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
+  gap: 25px;
+
+  padding: 0 35px;
+}
+
+/* Username */
+.container nav p {
+  margin: 0;
+
+  font-size: 15px;
+  font-weight: 600;
+  color: #374151;
+}
+
+/* Logout */
+.container nav button {
+  border: none;
+  background-color: #fee2e2;
+  color: #dc2626;
+
+  padding: 9px 18px;
+
+  border-radius: 7px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+.container nav button:hover {
+  background-color: #fecaca;
+}
+
+
+/* Financial Overview */
+.financialOverview {
+  padding: 30px;
+  
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 20px;
+}
+
+
+/* Responsive */
+/* @media (max-width: 900px) {
+  .asideBar {
+    width: 250px;
+  }
+
+  .container {
+    width: calc(100% - 250px);
+    margin-left: 250px;
+  }
+}
+
+@media (max-width: 650px) {
+  .asideBar {
+    width: 200px;
+    padding: 25px 15px;
+  }
+
+  .container {
+    width: calc(100% - 200px);
+    margin-left: 200px;
+  }
+
+  .financialOverview {
+    grid-template-columns: 1fr;
+    padding: 20px;
+  }
+} */
