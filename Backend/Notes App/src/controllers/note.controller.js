@@ -1,5 +1,7 @@
 const NotesModel = require("../models/notes.model");
 
+
+// Create
 const createNotesController = async (req, res) => {
    try {
       let { title, description } = req.body;
@@ -22,6 +24,8 @@ const createNotesController = async (req, res) => {
    }
 };
 
+
+// Getting ALL
 const getAllNotesController = async (req, res) => {
    try {
       const allNotes = await NotesModel.find();
@@ -34,6 +38,8 @@ const getAllNotesController = async (req, res) => {
    }
 };
 
+
+// Fetching Single
 const getfindByIdNoteController = async (req, res) => {
    try {
       let noteId = req.params.id;
@@ -53,6 +59,8 @@ const getfindByIdNoteController = async (req, res) => {
    }
 };
 
+
+// Update Note
 const updatedNotesController = async (req, res) => {
    try {
       let noteId = req.params.id;
@@ -73,6 +81,8 @@ const updatedNotesController = async (req, res) => {
    }
 };
 
+
+// Delete Note
 const deleteNoteController = async (req, res) => {
    try {
       let noteID = req.params.id
